@@ -24,3 +24,17 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@theme {
+  /* For Tailwind v4 */
+  --font-coptic: var(--font-coptic);
+}
+
+/* Or explicitly target elements that need to render Coptic text */
+.coptic-text {
+  font-family: var(--font-coptic), sans-serif;
+}
+
+@theme {
+  --font-coptic-classic: var(--font-antinoou);
+}
