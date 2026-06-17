@@ -1,12 +1,22 @@
+import Sentence, {SentenceProps} from "./sentence"
+
 
 type ParagraphProps = {
-    paragraph: any
+    paragraph: SentenceProps[]
 }
 
 const Paragraph = ({paragraph}: ParagraphProps) => {
   return (
     <div className="font-coptic-classic text-3xl">
-      <pre>{JSON.stringify(paragraph, null, 2)}</pre>
+      <pre>
+        {
+          paragraph.map(item ) => {
+            return <div key={}>
+                <Sentence {...item} />
+            </div>
+          }
+        }  
+      </pre>
     </div>
   )
 }
