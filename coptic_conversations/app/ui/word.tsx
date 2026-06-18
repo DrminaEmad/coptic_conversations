@@ -31,7 +31,11 @@ const SingleWord = ({ word } : {word: WordProps}) => {
     );
   }
 
-  return <div onClick={() => setShow(!show)} className="cursor-pointer select-none">
+  return <div 
+              className="cursor-pointer select-none"
+              onMouseEnter={() => setShow(true)} 
+              onMouseLeave={() => setShow(false)}
+         >
            {content}
          </div>
 }
