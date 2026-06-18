@@ -16,12 +16,12 @@ const Sentence = (props: SentenceProps) => {
   const words = props[firstKey] || [];
 
   return (
-    <div>
+    <div className="flex flex-wrap gap-4 items-start">
       {
-        words.map((word) => {
+        words.map((word, index) => {
             return(
-            <div key={word.arabic}>
-              {<SingleWord word={word} /> }
+            <div key={`${word.english}-${index}`}>
+              {<SingleWord word={word} />} 
             </div>)
         })
       }

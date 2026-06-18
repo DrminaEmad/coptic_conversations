@@ -7,15 +7,15 @@ type ParagraphProps = {
 
 const Paragraph = ({paragraph}: ParagraphProps) => {
   return (
-    <div className="font-coptic-classic text-3xl">
+    <div className="font-coptic-classic text-3xl w-full flex flex-col gap-6">
       <pre>
         {
-          paragraph.map(item ) => {
-            return <div key={}>
+          paragraph.map((item, index ) => {
+            return <div key={index }>
                 <Sentence {...item} />
             </div>
           }
-        }  
+        )}  
       </pre>
     </div>
   )
