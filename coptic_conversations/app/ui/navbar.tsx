@@ -3,22 +3,23 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import Sidebar from "./sidebar"; // Import your updated sidebar component
+import Sidebar from "./sidebar"; 
 
 export default function Navbar() {
   const pathname = usePathname(); 
-  const [isMobileOpen, setIsMobileOpen] = useState(false); // Shared layout state
+  const [isMobileOpen, setIsMobileOpen] = useState(false); 
 
   const toggleSidebar = () => setIsMobileOpen(!isMobileOpen);
-  const linkBaseClass = "flex no-underline py-[1em] px-[2em] transition-all duration-150 ease-in-out hover:bg-nav-hover hover:text-white border-b-2";
+  
+  // Stretched layout height to prevent vertical line offsets
+  const linkBaseClass = "flex items-center no-underline h-full px-6 transition-all duration-150 ease-in-out hover:bg-nav-hover hover:text-white border-b-2";
 
   return (
     <>
       <nav className="bg-nav-bg border-b border-nav-hover fixed top-0 left-0 right-0 md:static z-50 h-16 flex items-center px-4 md:px-8">
         <ul className="list-none flex items-center m-0 p-0 w-full h-full">
           
-          {/* 📱 MOBILE ALIGNMENT BLOCK: Hamburger sits perfectly on the left of the Home link */}
-          <li className="mr-auto flex items-center gap-2">
+          <li className="mr-auto flex items-center gap-2 h-full">
             <button 
               onClick={toggleSidebar} 
               aria-label="Toggle Sidebar Menu"
@@ -30,27 +31,21 @@ export default function Navbar() {
               </svg>
             </button>
 
-            {/* The Home Link stays nested right next to the mobile button */}
             <Link 
               href="/" 
               className={`${linkBaseClass} ${
-                pathname === "/" 
-                  ? "border-nav-accent text-black font-semibold" 
-                  : "border-transparent text-nav-text"
+                pathname === "/" ? "border-nav-accent text-black font-semibold" : "border-transparent text-nav-text"
               }`}
             >
               Home
             </Link>
           </li>
 
-          {/* 🖥️ DESKTOP-ONLY LINKS (Hidden entirely on mobile phone sizes) */}
-          <li className="md:flex  ">
+          <li className="hidden md:flex h-full">
             <Link 
               href="/login" 
               className={`${linkBaseClass} ${
-                pathname === "/login" 
-                  ? "border-nav-accent text-black font-semibold" 
-                  : "border-transparent text-nav-text"
+                pathname === "/login" ? "border-nav-accent text-black font-semibold" : "border-transparent text-nav-text"
               }`}
             >
               Login
@@ -59,9 +54,16 @@ export default function Navbar() {
         </ul>
       </nav>
 
-      {/* 🗂️ THE SIDEBAR ATTACHMENT */}
-      {/* Pass state control props straight into the sidebar component */}
-      <Sidebar isOpen={isMobileOpen} onClose={() => setIsMobileOpen(false)} />
+      {/* 🚀 YOUR IDEA: Wrapping the sidebar in a positioning container */}
+      {/* On desktop (md), this forces the sidebar to float permanently on the left side */}
+      <div className="hidden md:block fixed top-16 left-0 bottom-0 w-72 z-40">
+        <Sidebar isOpen={isMobileOpen} onClose={() => setIsMobileOpen(false)} />
+      </div>
+
+      {/* Mobile-only view portal attachment fallback */}
+      <div className="md:hidden">
+        <Sidebar isOpen={isMobileOpen} onClose={() => setIsMobileOpen(false)} />
+      </div>
     </>
   );
 }

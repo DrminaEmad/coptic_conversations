@@ -6,6 +6,7 @@ import Navbar from "./ui/navbar";
 import Sidebar from "./ui/sidebar";
 
 
+
 const AveFont = localFont({
   src: '../public/fonts/BishoyNormal.ttf',
   variable: '--font-Ave', // Tailor this identifier name to match the font
@@ -32,6 +33,7 @@ export const metadata: Metadata = {
   title: "Coptic",
   description: "Learn to speak Coptic Fast",
 };
+
 
 export default function RootLayout({
   children,

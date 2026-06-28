@@ -31,8 +31,8 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
           md:flex md:sticky md:top-0 md:h-[calc(100vh-64px)] md:translate-x-0
           
           /* 📱 Mobile Floating Panel Style Drawer Layout */
-          fixed top-16 bottom-0 left-0 w-70 transition-transform duration-300 ease-in-out 
-          ${isOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"}
+          fixed top-16 bottom-0 left-0 w-72 transition-transform duration-300 ease-in-out 
+          ${isOpen ? "translate-x-0" : "-translate-x-full "}
         `}
       >
         <div className="flex items-center justify-between">
