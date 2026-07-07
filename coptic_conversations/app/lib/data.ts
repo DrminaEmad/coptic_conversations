@@ -17,19 +17,43 @@ export const conversationData: TranscriptSegment[] = [
   {
     id: 1,
     startTime: 0.0,
-    endTime: 3.5,
+    endTime: 2.0,
     words: [
-      { coptic: "Ⲓⲁⲃⲁⲥⲕⲓⲡⲧ", english: "JavaScript", arabic: "جافا سكريبت" },
-      { coptic: "ⲟⲩⲟⲛ", english: "is", arabic: "تكون" }
+      { coptic: "Ϩⲉⲙⲥⲓ", english: "set down", arabic: "اجلس" },
     ]
   },
   {
     id: 2,
-    startTime: 3.6,
-    endTime: 7.2,
+    startTime: 3.0,
+    endTime: 9.0,
     words: [
-      { coptic: "Ⲛⲓⲥⲕⲉⲩⲏ", english: "Objects", arabic: "الكائنات" },
-      { coptic: "ⲭⲱ", english: "store", arabic: "تخزن" }
+      { coptic: "̀Ⲛⲑⲱⲛ", english: "where", arabic: "اين" },
     ]
-  }
+  },
+  {
+    id: 3,
+    startTime: 10.0,
+    endTime: 14.0,
+    words: [
+      { coptic: "Ϩⲉⲙⲥⲓ", english: "set down", arabic: "اجلس" },
+      { coptic: "̀Ⲙⲛⲁⲓ", english: "beside me", arabic: "بجانبي" }    ]
+  },
+  {
+    id: 4,
+    startTime: 15.0,
+    endTime: 19.0,
+    words: [
+      { coptic: "Ϩⲓϫⲉⲛ", english: "on", arabic: "علي" },
+      { coptic: "ⲟⲩ", english: "what", arabic: "ماذا" }
+    ]
+  },
+  {
+    id: 5,
+    startTime: 23.0,
+    endTime: 27.0, 
+    words: [
+      { coptic: "Ϩⲓϫⲉⲛ", english: "on", arabic: "علي" },
+      { coptic: "ⲡⲓⲧⲟⲧⲥ", english: "the chair", arabic: "الكرسي" }
+    ]
+  },
 ];
