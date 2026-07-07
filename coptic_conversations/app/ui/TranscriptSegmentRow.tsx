@@ -2,6 +2,8 @@
 
 import { memo } from "react";
 import { TranscriptSegment } from "../lib/data";
+import SingleWord ,  { WordProps } from './word';
+
 
 interface RowProps {
   segment: TranscriptSegment;
@@ -28,16 +30,17 @@ const TranscriptSegmentRow = memo(({ segment, isActive, onSeek }: RowProps) => {
               isActive ? "text-[#0071FF] font-medium" : "text-zinc-800 dark:text-zinc-200"
             }`}
           >
-            {word.coptic}
+          <SingleWord word={word} />
+            {/* {word.coptic} */}
           </span>
         ))}
       </div>
 
       {/* Auxiliary Sub-Translations (English & Arabic) */}
-      <div className="flex flex-col gap-0.5 text-sm font-sans text-zinc-500 dark:text-zinc-400">
-        <p>🇬🇧 {segment.words.map(w => w.english).join(" ")}</p>
-        <p className="text-right font-arabic">🇪🇬 {segment.words.map(w => w.arabic).join(" ")}</p>
-      </div>
+      {/* <div className="flex flex-col gap-0.5 text-sm font-sans text-zinc-500 dark:text-zinc-400"> */}
+        {/* <p>🇬🇧 {segment.words.map(w => w.english).join(" ")}</p> */}
+        {/* <p className="text-right font-arabic">🇪🇬 {segment.words.map(w => w.arabic).join(" ")}</p> */}
+      {/* </div> */}
     </div>
   );
 });
