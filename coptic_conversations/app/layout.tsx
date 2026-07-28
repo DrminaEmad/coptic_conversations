@@ -17,6 +17,7 @@ const notoSansCoptic = Noto_Sans_Coptic({
   subsets: ['coptic'],
   weight: '400',
   variable: '--font-coptic', // CSS variable for easy targeting
+  preload: false
 });
 
 const geistSans = Geist({

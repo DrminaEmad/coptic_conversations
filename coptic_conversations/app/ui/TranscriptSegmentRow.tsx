@@ -24,15 +24,15 @@ const TranscriptSegmentRow = memo(({ segment, isActive, onSeek }: RowProps) => {
       {/* Coptic Main Sentence Layer */}
       <div className="flex flex-wrap gap-x-3 gap-y-1 mb-2">
         {segment.words.map((word, index) => (
-          <span 
+          <div 
             key={index} 
-            className={`text-2xl font-coptic tracking-wide ${
-              isActive ? "text-[#0071FF] font-medium" : "text-zinc-800 dark:text-zinc-200"
+            className={`transition-colors duration-150 ${
+              isActive ? "[&_span]:text-[#0071FF] [&_span]:font-medium" : ""
             }`}
           >
           <SingleWord word={word} />
             {/* {word.coptic} */}
-          </span>
+          </div>
         ))}
       </div>
 
