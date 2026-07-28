@@ -15,20 +15,20 @@ const TranscriptSegmentRow = memo(({ segment, isActive, onSeek }: RowProps) => {
   return (
     <div 
       onClick={() => onSeek(segment.startTime)} // Triggers timeline jump on click
-      className={`p-4 rounded-xl transition-all duration-300 border cursor-pointer hover:bg-zinc-50 dark:hover:bg-zinc-900/40 select-none ${
+      className={`p-4 rounded-xl transition-all duration-300 border cursor-pointer select-none ${
         isActive 
-          ? "bg-blue-50/50 dark:bg-blue-950/20 border-blue-200 dark:border-blue-900 shadow-sm scale-[1.01] hover:bg-blue-50/50 dark:hover:bg-blue-950/20" 
-          : "bg-transparent border-transparent opacity-60 hover:opacity-100"
+          ? "bg-blue-50/50 dark:bg-blue-950/20 border-blue-200 dark:border-blue-900 shadow-sm scale-[1.01]" 
+          : "bg-transparent border-transparent opacity-60 hover:opacity-100 hover:bg-zinc-50 dark:hover:bg-zinc-900/40"
       }`}
     >
       {/* Coptic Main Sentence Layer */}
       <div className="flex flex-wrap gap-x-3 gap-y-1 mb-2">
-        {segment.words.map((word, index) => (
+        {segment.words.map((word) => (
           <div 
-            key={index} 
-            className={`transition-colors duration-150 ${
-              isActive ? "[&_span]:text-[#0071FF] [&_span]:font-medium" : ""
-            }`}
+            key={word.coptic} 
+            // className={`transition-colors duration-150 ${
+            //   isActive ? "[&_span]:text-[#0071FF] [&_span]:font-medium" : ""
+            // }`}
           >
           <SingleWord word={word} />
             {/* {word.coptic} */}
