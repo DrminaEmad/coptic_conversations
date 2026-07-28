@@ -49,7 +49,7 @@ export default function TranscriptAudioPlayer() {
         .then(() => setIsPlaying(true))
         .catch(err => console.log("Interaction required:", err));
     }
-  }, [isPlaying]);
+  }, []);
 
   return (
     <div className="w-full max-w-3xl mx-auto p-6 bg-white dark:bg-zinc-950 rounded-2xl border border-zinc-200 dark:border-zinc-800 shadow-sm flex flex-col gap-8">
