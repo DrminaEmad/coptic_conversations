@@ -21,7 +21,7 @@ const Sentence = (props: SentenceProps) => {
         words.map((word, index) => {
             return(
             <div key={`${word.english}-${index}`}>
-              {<SingleWord word={word} />} 
+              {/* {<SingleWord word={word} />}  */}
             </div>)
         })
       }
