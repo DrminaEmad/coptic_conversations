@@ -8,7 +8,7 @@ export default function TranscriptAudioPlayer() {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [activeSegmentId, setActiveSegmentId] = useState<string | number | null>(null);
-
+   const scrollContainerRef = useRef<HTMLDivElement | null>(null);
   // Centralized time tracker for all rows
   useEffect(() => {
     const audioElement = audioRef.current;
@@ -43,6 +43,25 @@ export default function TranscriptAudioPlayer() {
     };
 
   }, []);
+
+
+  useEffect(() => {
+    if (activeSegmentId === null || !scrollContainerRef.current) return;
+
+    // Find the child element inside the container matching our data-id attribute
+    const activeElement = scrollContainerRef.current.querySelector(
+      `[data-id="${activeSegmentId}"]`
+    ) as HTMLElement;
+
+    if (activeElement) {
+      activeElement.scrollIntoView({
+        behavior: "smooth",   // Creates the smooth animated glide effect
+        block: "nearest",     // Intelligent positioning: moves it only if out of bounds
+        inline: "nearest",
+      });
+    }
+  }, [activeSegmentId]); 
+
 
   const togglePlay = () => {
     if (!audioRef.current) return;
@@ -92,14 +111,17 @@ export default function TranscriptAudioPlayer() {
       </div>
 
       {/* 📄 3. ISOLATED TEXT SCROLL PANEL */}
-      <div className="flex flex-col gap-6 max-h-[450px] overflow-y-auto pr-2">
+      <div 
+        ref={scrollContainerRef}
+        className="flex flex-col gap-6 max-h-[450px] overflow-y-auto pr-2">
         {conversationData.map((segment) => (
-          <TranscriptSegmentRow 
-            key={segment.id} 
+        <div key={segment.id} data-id={segment.id} className="w-full">
+          <TranscriptSegmentRow  
             segment={segment} 
             isActive={activeSegmentId === segment.id}
             onSeek={handleSeek} // Pass down the jump function
           />
+          </div>
         ))}
       </div>
 
