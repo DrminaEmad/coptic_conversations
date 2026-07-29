@@ -17,16 +17,31 @@ export default function TranscriptAudioPlayer() {
     const handleTimeUpdate = () => {
       const time = audioElement.currentTime;
 
-      const match = conversationData.find(
-        (seg) => time >= seg.startTime && time <= seg.endTime
-      );
+      // const match = conversationData.find(
+      //   (seg) => time >= seg.startTime && time <= seg.endTime
+      // );
+
+      const matchingSegments = conversationData.filter((seg) => time >= seg.startTime);
+      const match = matchingSegments[matchingSegments.length - 1];
 
       const nextActiveId = match ? match.id : null;
       setActiveSegmentId((prevId) => (prevId !== nextActiveId ? nextActiveId : prevId));
     };
 
+    // Centralized event syncing to avoid interaction desync bugs
+        const handlePlay = () => setIsPlaying(true);
+        const handlePause = () => setIsPlaying(false);
+
     audioElement.addEventListener("timeupdate", handleTimeUpdate);
-    return () => audioElement.removeEventListener("timeupdate", handleTimeUpdate);
+    audioElement.addEventListener("play", handlePlay);
+    audioElement.addEventListener("pause", handlePause);
+
+    return () => {
+      audioElement.removeEventListener("timeupdate", handleTimeUpdate);
+      audioElement.removeEventListener("play", handlePlay);
+      audioElement.removeEventListener("pause", handlePause);
+    };
+
   }, []);
 
   const togglePlay = () => {
@@ -77,7 +92,7 @@ export default function TranscriptAudioPlayer() {
       </div>
 
       {/* 📄 3. ISOLATED TEXT SCROLL PANEL */}
-      <div className="flex flex-col gap-6 max-h-112.5 overflow-y-auto pr-2">
+      <div className="flex flex-col gap-6 max-h-[450px] overflow-y-auto pr-2">
         {conversationData.map((segment) => (
           <TranscriptSegmentRow 
             key={segment.id} 
