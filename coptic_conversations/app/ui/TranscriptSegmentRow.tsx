@@ -2,7 +2,7 @@
 
 import { memo } from "react";
 import { TranscriptSegment } from "../lib/data";
-import SingleWord ,  { WordProps } from './word';
+import SingleWord from './word';
 
 
 interface RowProps {
@@ -25,16 +25,9 @@ const TranscriptSegmentRow = memo(({ segment, isActive, onSeek }: RowProps) => {
       <div className="flex flex-wrap gap-x-3 gap-y-1 mb-2">
         {segment.words.map((word, index) => (
           <div 
-            key={word.coptic} 
-            // className={`transition-colors duration-150 ${
-            //   isActive ? "[&_span]:text-[#0071FF] [&_span]:font-medium" : ""
-            // }`}
+            key={`${word.coptic}-${index}`}  
           >
-          <SingleWord 
-            key={`${word.coptic}-${index}`} 
-            word={word} 
-            isActiveRow={isActive} 
-          />            
+          <SingleWord word={word} isActiveRow={isActive} />            
           </div>
         ))}
       </div>
