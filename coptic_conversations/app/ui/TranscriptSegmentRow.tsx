@@ -34,7 +34,7 @@ const TranscriptSegmentRow = memo(({ segment, isActive, onSeek }: RowProps) => {
             key={`${word.coptic}-${index}`} 
             word={word} 
             isActiveRow={isActive} 
-          />            {/* {word.coptic} */}
+          />            
           </div>
         ))}
       </div>
