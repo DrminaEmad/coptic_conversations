@@ -9,9 +9,19 @@ interface RowProps {
   segment: TranscriptSegment;
   isActive: boolean;
   onSeek: (startTime: number) => void; // Added click action handler type
+  isPlaying: boolean;
+  setIsPlaying: (playing: boolean) => void;
+  getCurrentAudioTime: () => number;
 }
 
-const TranscriptSegmentRow = memo(({ segment, isActive, onSeek }: RowProps) => {
+const TranscriptSegmentRow = memo(({  
+  segment,   
+  isActive, 
+  onSeek,   
+  isPlaying,
+  setIsPlaying,
+  getCurrentAudioTime  }: RowProps) => {
+
   return (
     <div 
       onClick={() => onSeek(segment.startTime)} // Triggers timeline jump on click
@@ -26,17 +36,20 @@ const TranscriptSegmentRow = memo(({ segment, isActive, onSeek }: RowProps) => {
         {segment.words.map((word, index) => (
           <div 
             key={`${word.coptic}-${index}`}  
+            className="inline-block"
           >
-          <SingleWord word={word} isActiveRow={isActive} />            
+          
+          <SingleWord
+            word={word}
+            isActiveRow={isActive} 
+            isPlaying={isPlaying}
+            setIsPlaying={setIsPlaying}
+            getCurrentAudioTime={getCurrentAudioTime}
+            onSeek={onSeek}
+          />            
           </div>
         ))}
       </div>
-
-      {/* Auxiliary Sub-Translations (English & Arabic) */}
-      {/* <div className="flex flex-col gap-0.5 text-sm font-sans text-zinc-500 dark:text-zinc-400"> */}
-        {/* <p>🇬🇧 {segment.words.map(w => w.english).join(" ")}</p> */}
-        {/* <p className="text-right font-arabic">🇪🇬 {segment.words.map(w => w.arabic).join(" ")}</p> */}
-      {/* </div> */}
     </div>
   );
 });
