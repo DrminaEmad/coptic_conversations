@@ -8,7 +8,9 @@ export default function TranscriptAudioPlayer() {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [activeSegmentId, setActiveSegmentId] = useState<string | number | null>(null);
-   const scrollContainerRef = useRef<HTMLDivElement | null>(null);
+  const [translationMode, setTranslationMode] = useState<"english" | "arabic" | "none">("english");
+  const scrollContainerRef = useRef<HTMLDivElement | null>(null);
+
   // Centralized time tracker for all rows
   useEffect(() => {
     const audioElement = audioRef.current;
@@ -109,7 +111,27 @@ export default function TranscriptAudioPlayer() {
           {isPlaying ? "⏸️ Pause Dialogue" : "▶️ Play Dialogue"}
         </button>
       </div>
-
+{/* 🌐 TRANSLATION CONTROLS SECTION */}
+<div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-zinc-50 dark:bg-zinc-900/50 p-3 rounded-xl border border-zinc-100 dark:border-zinc-800/80">
+  <span className="text-xs font-medium text-zinc-500 uppercase tracking-wider text-left">
+    Translation Display
+  </span>
+  <div className="flex w-full sm:w-auto bg-zinc-200/60 dark:bg-zinc-800 p-1 rounded-lg gap-1">
+    {(["english", "arabic", "none"] as const).map((mode) => (
+      <button
+        key={mode}
+        onClick={() => setTranslationMode(mode)}
+        className={`flex-1 sm:flex-initial text-center px-3 py-1.5 text-xs font-semibold rounded-md transition-all cursor-pointer capitalize ${
+          translationMode === mode
+            ? "bg-white dark:bg-zinc-700 text-[#0071FF] dark:text-white shadow-sm"
+            : "text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-200"
+        }`}
+      >
+        {mode === "none" ? "Off" : mode}
+      </button>
+    ))}
+  </div>
+</div>
       {/* 📄 3. ISOLATED TEXT SCROLL PANEL */}
       <div 
         ref={scrollContainerRef}
