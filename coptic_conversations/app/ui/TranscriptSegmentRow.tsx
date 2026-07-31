@@ -3,7 +3,7 @@
 import { memo } from "react";
 import { TranscriptSegment } from "../lib/data";
 import SingleWord from './word';
-
+import { englishSentence, arabicSentence } from "../lib/helper";
 
 interface RowProps {
   segment: TranscriptSegment;
@@ -12,6 +12,7 @@ interface RowProps {
   isPlaying: boolean;
   setIsPlaying: (playing: boolean) => void;
   getCurrentAudioTime: () => number;
+  translation: "english" | "arabic" | "none"
 }
 
 const TranscriptSegmentRow = memo(({  
@@ -20,7 +21,13 @@ const TranscriptSegmentRow = memo(({
   onSeek,   
   isPlaying,
   setIsPlaying,
-  getCurrentAudioTime  }: RowProps) => {
+  getCurrentAudioTime, translation  }: RowProps) => {
+  
+  const displaySentence = 
+  translation === 'arabic' ? arabicSentence(translation, segment) :
+  translation === 'english' ? englishSentence(translation, segment) : 
+  null;
+
 
   return (
     <div 
@@ -38,7 +45,6 @@ const TranscriptSegmentRow = memo(({
             key={`${word.coptic}-${index}`}  
             className="inline-block"
           >
-          
           <SingleWord
             word={word}
             isActiveRow={isActive} 
@@ -50,7 +56,21 @@ const TranscriptSegmentRow = memo(({
           </div>
         ))}
       </div>
-    </div>
+        {displaySentence && (
+          <div className="mt-3 pt-2.5 border-t border-zinc-100 dark:border-zinc-800/60 transition-all duration-300">
+            <p 
+              dir={translation === 'arabic' ? 'rtl' : 'ltr'}
+              className={`leading-relaxed tracking-wide font-sans ${
+                translation === 'arabic'
+                  ? "text-xl md:text-2xl text-emerald-700 dark:text-emerald-400 font-medium text-right leading-loose"
+                  : "text-lg md:text-xl text-zinc-600 dark:text-zinc-400 font-normal text-left"
+              }`}
+            >
+              {displaySentence}
+            </p>
+          </div>
+        )}
+      </div>
   );
 });
 

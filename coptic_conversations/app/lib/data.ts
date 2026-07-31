@@ -19,7 +19,7 @@ export const conversationData: TranscriptSegment[] = [
     startTime: 0.0,
     endTime: 2.0,
     words: [
-      { coptic: "Ϩⲉⲙⲥⲓ", english: "set down", arabic: "اجلس" },
+      { coptic: "Ϩⲉⲙⲥⲓ", english: "sit down", arabic: "اجلس" },
     ]
   },
   {
