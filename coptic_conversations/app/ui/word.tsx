@@ -107,13 +107,13 @@ export default function SingleWord({ word,
         e.stopPropagation(); // 🛑 BLOCKS sentence row from triggering a rewind!
       }
     })}
-      className="inline-flex flex-col items-center justify-start p-2 rounded-xl bg-zinc-50 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 transition-all duration-200 select-none min-w-[70px] cursor-pointer active:scale-95">
+       className="inline-flex flex-col items-center justify-start p-2 rounded-xl bg-brand-muted/5 border border-brand-muted/10 transition-all duration-200 select-none min-w-[70px] cursor-pointer active:scale-95">
       
       {/* 🔹 Core Target Language Text (Behaves like standard readable prose) */}
       <span className={`text-3xl font-coptic tracking-wide transition-colors duration-150 py-1 px-0.5 rounded-md ${
         isActiveRow 
-          ? "text-blue-600 dark:text-blue-400 font-medium bg-blue-50/30 dark:bg-blue-950/20" 
-          : "text-zinc-800 dark:text-zinc-200 "
+          ? "text-brand-primary font-semibold bg-brand-primary/10" 
+          : "text-foreground"
       }`}>
         {word.coptic}
       </span>
@@ -140,7 +140,7 @@ export default function SingleWord({ word,
           <div className="w-full flex justify-between items-center gap-3 pt-1">
             <button
               onClick={handlePlayWordSound}
-              className="text-xs flex items-center gap-1 bg-zinc-800 dark:bg-zinc-700 hover:bg-zinc-700 dark:hover:bg-zinc-600 px-2 py-1 rounded-lg text-blue-400 font-medium transition-all active:scale-95"
+              className="text-xs flex items-center gap-1 bg-zinc-800 dark:bg-zinc-700 hover:bg-zinc-700 dark:hover:bg-zinc-600 px-2 py-1 rounded-lg text-brand-accent font-semibold transition-all active:scale-95"
             >
               🔊 Audio
             </button>
