@@ -75,6 +75,18 @@ export default function TranscriptAudioPlayer() {
     setIsPlaying(!isPlaying);
   };
 
+  const setAudioPlayback = useCallback((playing: boolean) => {
+    if (!audioRef.current) return;
+    if (playing) {
+      audioRef.current.play().catch(err => console.log("Interaction required:", err));
+      setIsPlaying(true);
+    } else {
+      audioRef.current.pause();
+      setIsPlaying(false);
+    }
+  }, []);
+
+
   // Jump to specific timestamp and auto-play if paused
   const handleSeek = useCallback((startTime: number) => {
     if (!audioRef.current) return;
@@ -143,7 +155,7 @@ export default function TranscriptAudioPlayer() {
             isActive={activeSegmentId === segment.id}
             onSeek={handleSeek} // Pass down the jump function
             isPlaying={isPlaying}
-            setIsPlaying={setIsPlaying}
+            setIsPlaying={setAudioPlayback}
             getCurrentAudioTime={() => audioRef.current?.currentTime || 0}
             translation={translationMode}
           />

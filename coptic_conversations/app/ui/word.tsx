@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { 
   useFloating, 
   useInteractions, 
@@ -15,7 +15,7 @@ import {
 
 
 
-export type WordProps = { 
+export interface WordProps  { 
   coptic: string;
   arabic: string; 
   english: string;
@@ -39,38 +39,49 @@ export default function SingleWord({ word,
   onSeek
   }: SingleWordProps) {
 
-    const [isOpen, setIsOpen] = useState(false);
-    const arrowRef = useRef<HTMLDivElement | null>(null);
+  const [isOpen, setIsOpen] = useState(false);
+  const [arrowEl, setArrowEl] = useState<HTMLDivElement | null>(null);
     
-    // Keeps track of where the audio stopped instantly without trigger delays
-    const savedTimeRef = useRef<number>(0);
+  // Keeps track of where the audio stopped instantly without trigger delays
+  const savedTimeRef = useRef<number>(0);
 
-        // Floating UI Setup Hook
-    const { refs, floatingStyles, context } = useFloating({
+  // Floating UI Setup Hook
+  const { refs, floatingStyles, context, middlewareData  } = useFloating({
       open: isOpen,
-      onOpenChange: (open) => {
-        if (open) {
-          // --- ⏸️ AUDIO FREEZE ON OPEN ---
-          savedTimeRef.current = getCurrentAudioTime(); // Capture current location
-          setIsPlaying(false);                          // Pause core player loop
-          setIsOpen(true);
-        } else {
-          // --- ▶️ RESTORE ON CLOSE ---
-          onSeek(savedTimeRef.current);                 // Send player back to freeze frame
-          setIsOpen(false);
-        }
-      },
+      onOpenChange: setIsOpen,
       middleware: [
         offset(10),                  // Padding clearance from the word
         flip(),                      // Flip overlay to top or bottom if space is narrow
         shift(),                     // Prevent clipping off edge of horizontal mobile screen
-        arrow({ element: arrowRef }) // Track custom tooltip visual pointer arrow
+        arrow({ element: arrowEl }) // Track custom tooltip visual pointer arrow
       ],
     });
 
+  useEffect(() => {
+      if (isOpen) {
+        savedTimeRef.current = getCurrentAudioTime(); 
+        setIsPlaying(false);                          
+      } else {
+        if (savedTimeRef.current > 0) {
+          onSeek(savedTimeRef.current);
+        }
+      }
+    }, [isOpen]);
     // Attach clicking and dismiss behavior hooks
     const click = useClick(context);
     const dismiss = useDismiss(context);
+
+    // Add this line right below your "getFloatingProps" declaration:
+    const { x: arrowX, y: arrowY } = middlewareData.arrow || {};
+
+    const setReferenceRef = (node: HTMLDivElement | null) => {
+        if (node) refs.setReference(node);
+      };
+    // ADD THIS LINE:
+    const setFloatingRef = (node: HTMLDivElement | null) => {
+      if (node) refs.setFloating(node);
+    };
+
     const { getReferenceProps, getFloatingProps } = useInteractions([click, dismiss]);
 
 
@@ -90,7 +101,7 @@ export default function SingleWord({ word,
   return (
 
     <div 
-      ref={refs.setReference}
+      ref={setReferenceRef}
     {...getReferenceProps({
       onClick: (e) => {
         e.stopPropagation(); // 🛑 BLOCKS sentence row from triggering a rewind!
@@ -110,7 +121,7 @@ export default function SingleWord({ word,
       {isOpen && (
       <FloatingPortal>
         <div
-          ref={refs.setFloating}
+          ref={setFloatingRef}
           style={floatingStyles}
           {...getFloatingProps()}
           className="z-50 flex flex-col items-center gap-2 bg-zinc-900 dark:bg-zinc-800 text-white px-4 py-3 rounded-2xl shadow-xl border border-zinc-800 dark:border-zinc-700 min-w-[140px] max-w-[240px] animate-in fade-in zoom-in-95 duration-100"
@@ -143,11 +154,14 @@ export default function SingleWord({ word,
 
           {/* Floating dynamic calculated structural visual anchor pointer arrow */}
           <div 
-            ref={arrowRef} 
+            ref={setArrowEl} 
             className="w-2 h-2 bg-zinc-900 dark:bg-zinc-800 rotate-45 border-r border-b border-zinc-800 dark:border-zinc-700"
-            style={{ position: 'absolute' }}
-          />
-        </div>
+            style={{
+              position: 'absolute',
+              left: arrowX != null ? `${arrowX}px` : '',
+              top: arrowY != null ? `${arrowY}px` : '',
+            }}
+          />        </div>
       </FloatingPortal>
       )}
 
