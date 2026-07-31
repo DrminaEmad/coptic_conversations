@@ -41,7 +41,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode; }>) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${AveFont.variable} ${notoSansCoptic.variable} h-full antialiased`}>
-      <body className="min-h-full bg-zinc-50 dark:bg-black text-foreground font-sans flex flex-col">
+      <body className="min-h-full bg-background text-foreground font-sans flex flex-col">
         
         {/* 🗺️ THE MASTER HEADER: Renders top bar links on desktop AND controls mobile sidebar */}
         <Navbar />

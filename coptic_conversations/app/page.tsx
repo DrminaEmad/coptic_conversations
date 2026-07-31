@@ -4,10 +4,10 @@ export default function Home() {
   return (
     /* 🚀 FIXED: Added md:col-span-full to force the box to break out of the 280px column constraints */
     /* 🚀 FIXED: Added w-full max-w-none to let the parent layout fill the remaining fraction grid space */
-    <div className="md:col-span-full flex-1 w-full bg-zinc-50 font-sans dark:bg-black p-4 sm:p-8 md:ml-48 min-h-[calc(100vh-64px)] flex justify-center items-start pt-6 md:pt-12">
+    <div className="md:col-span-full flex-1 w-full bg-background font-sans p-4 sm:p-8 md:ml-48 min-h-[calc(100vh-64px)] flex justify-center items-start pt-6 md:pt-12">
       
       {/* 🚀 FIXED: Wrapped main in a flexible width bounds box to let it breath across wide viewports */}
-      <main className="w-full max-w-3xl bg-white dark:bg-zinc-950 border border-zinc-100 dark:border-zinc-800 rounded-3xl p-6 sm:p-10 shadow-sm min-w-0">
+      <main className="w-full max-w-3xl bg-white dark:bg-zinc-900 border border-brand-muted/20 rounded-3xl p-6 sm:p-10 shadow-sm min-w-0">
         
         <TranscriptAudioPlayer />
         
