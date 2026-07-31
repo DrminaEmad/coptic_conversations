@@ -12,11 +12,11 @@ export default function Navbar() {
   const toggleSidebar = () => setIsMobileOpen(!isMobileOpen);
   
   // Stretched layout height to prevent vertical line offsets
-  const linkBaseClass = "flex items-center no-underline h-full px-6 transition-all duration-150 ease-in-out hover:bg-nav-hover hover:text-white border-b-2";
+  const linkBaseClass = "flex items-center no-underline h-full px-6 transition-all duration-150 ease-in-out hover:bg-brand-hover hover:text-white border-b-2";
 
   return (
     <>
-      <nav className="bg-nav-bg border-b border-nav-hover fixed top-0 left-0 right-0 md:static z-50 h-16 flex items-center px-4 md:px-8">
+      <nav className="bg-background border-b border-brand-accent/20 fixed top-0 left-0 right-0 md:static z-50 h-16 flex items-center px-4 md:px-8">
         <ul className="list-none flex items-center m-0 p-0 w-full h-full">
           
           <li className="mr-auto flex items-center gap-2 h-full">
@@ -34,7 +34,7 @@ export default function Navbar() {
             <Link 
               href="/" 
               className={`${linkBaseClass} ${
-                pathname === "/" ? "border-nav-accent text-black font-semibold" : "border-transparent text-nav-text"
+                pathname === "/" ? "border-brand-accent text-brand-primary font-semibold" : "border-transparent text-brand-muted"
               }`}
             >
               Home
@@ -45,7 +45,7 @@ export default function Navbar() {
             <Link 
               href="/login" 
               className={`${linkBaseClass} ${
-                pathname === "/login" ? "border-nav-accent text-black font-semibold" : "border-transparent text-nav-text"
+                pathname === "/login" ? "border-brand-accent text-brand-primary font-semibold" : "border-transparent text-brand-muted"
               }`}
             >
               Login
