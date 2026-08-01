@@ -12,7 +12,7 @@ import {
   arrow,
   FloatingPortal 
 } from "@floating-ui/react";
-
+import EarSvg from "./EarSvg";
 
 
 export interface WordProps  { 
@@ -119,50 +119,72 @@ export default function SingleWord({ word,
       </span>
       
       {isOpen && (
-      <FloatingPortal>
-        <div
-          ref={setFloatingRef}
-          style={floatingStyles}
-          {...getFloatingProps()}
-          className="z-50 flex flex-col items-center gap-2 bg-zinc-900 dark:bg-zinc-800 text-white px-4 py-3 rounded-2xl shadow-xl border border-zinc-800 dark:border-zinc-700 min-w-[140px] max-w-[240px] animate-in fade-in zoom-in-95 duration-100"
-        >
-          {/* Arabic translation layer */}
-          <span className="text-base font-arabic font-medium text-zinc-100 w-full text-center" dir="rtl">
-            {word.arabic}
-          </span>
-          
-          {/* English translation layer */}
-          <span className="text-sm font-sans text-zinc-300 italic text-center w-full pb-1 border-b border-zinc-800 dark:border-zinc-700">
-            {word.english}
-          </span>
-
-          {/* Action Row Strip Buttons */}
-          <div className="w-full flex justify-between items-center gap-3 pt-1">
+    <FloatingPortal>
+      <div
+        ref={setFloatingRef}
+        style={floatingStyles}
+        {...getFloatingProps()}
+        className="z-50 flex flex-col gap-3 bg-zinc-950 dark:bg-zinc-900 text-foreground px-4 py-3.5 rounded-2xl shadow-xl border border-brand-primary/20 min-w-[200px] max-w-[280px] animate-in fade-in zoom-in-95 duration-100"
+      >
+        {/* ─── HEADER ROW ─── */}
+        <div className="flex items-center justify-between gap-4 w-full">
+          {/* Coptic Word & Audio Trigger Group */}
+          <div className="flex items-center gap-2">
+            <span className="text-3xl font-coptic font-semibold tracking-wide text-brand-primary bg-brand-primary/10 px-2 py-0.5 rounded-lg">
+              {word.coptic}
+            </span>
             <button
               onClick={handlePlayWordSound}
-              className="text-xs flex items-center gap-1 bg-zinc-800 dark:bg-zinc-700 hover:bg-zinc-700 dark:hover:bg-zinc-600 px-2 py-1 rounded-lg text-brand-accent font-semibold transition-all active:scale-95"
+              className="p-1 rounded-lg text-brand-accent hover:bg-brand-accent/10 transition-colors active:scale-95"
+              title="Play Audio"
             >
-              🔊 Audio
-            </button>
-            <button
-              onClick={() => setIsOpen(false)}
-              className="text-xs text-zinc-400 hover:text-zinc-200 transition-colors"
-            >
-              Close
+              <EarSvg 
+                width={24} 
+                height={30} 
+                className="text-brand-accent"
+              />
             </button>
           </div>
 
-          {/* Floating dynamic calculated structural visual anchor pointer arrow */}
-          <div 
-            ref={setArrowEl} 
-            className="w-2 h-2 bg-zinc-900 dark:bg-zinc-800 rotate-45 border-r border-b border-zinc-800 dark:border-zinc-700"
-            style={{
-              position: 'absolute',
-              left: arrowX != null ? `${arrowX}px` : '',
-              top: arrowY != null ? `${arrowY}px` : '',
-            }}
-          />        </div>
-      </FloatingPortal>
+          {/* X Close Button */}
+          <button
+            onClick={() => setIsOpen(false)}
+            className="text-xl font-sans text-muted-foreground hover:text-foreground transition-colors p-1 leading-none rounded-md hover:bg-brand-muted/10"
+            aria-label="Close popover"
+          >
+            &times;
+          </button>
+        </div>
+
+        {/* ─── TRANSLATIONS SIDE-BY-SIDE ─── */}
+        <div className="grid grid-cols-2 gap-2 items-center w-full border-t border-brand-muted/10 pt-2.5">
+          {/* English Translation */}
+          <div className="text-center pr-2 border-r border-brand-muted/15 h-full flex items-center justify-center">
+            <span className="text-sm font-sans text-zinc-300 italic line-clamp-2">
+              {word.english}
+            </span>
+          </div>
+
+          {/* Arabic Translation */}
+          <div className="text-center pl-2 h-full flex items-center justify-center" dir="rtl">
+            <span className="text-base font-arabic font-medium text-zinc-100 line-clamp-2">
+              {word.arabic}
+            </span>
+          </div>
+        </div>
+
+        {/* ─── POINTER ARROW ─── */}
+        <div 
+          ref={setArrowEl} 
+          className="w-2 h-2 bg-zinc-950 dark:bg-zinc-900 rotate-45 border-r border-b border-brand-primary/20"
+          style={{
+            position: 'absolute',
+            left: arrowX != null ? `${arrowX}px` : '',
+            top: arrowY != null ? `${arrowY}px` : '',
+          }}
+        />
+      </div>
+    </FloatingPortal>
       )}
 
     </div>
