@@ -77,13 +77,13 @@ const TranscriptSegmentRow = memo(({
         </div>
 
       </div>
-              <EarSvg 
+        <EarSvg 
             width={50} 
             height={80} 
             className={`transition-colors duration-300 ${
               isActive 
                 ? "text-brand-accent animate-pulse" 
-                : "text-brand-muted/40 group-hover:text-brand-muted/70"
+                : "text-brand-muted/80 group-hover:text-brand-muted/70"
             }`}
           />
       </div>
