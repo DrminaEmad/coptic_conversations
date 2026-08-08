@@ -33,7 +33,17 @@ export default function PopOver ({
               style={floatingStyles}
               {...getFloatingProps()}
               className="z-50 flex flex-col gap-4 bg-background backdrop-blur-md text-foreground p-4 rounded-2xl shadow-xl border border-brand-primary/20 min-w-[240px] max-w-[340px] animate-in fade-in zoom-in-95 duration-100 relative"
-            >
+            > 
+              {/* X Close Button */}
+              <div className="flex justify-end h-min">
+                <button
+                  onClick={() => setIsOpen(false)}
+                  className=" text-xl font-sans text-brand-muted/70 hover:text-brand-primary transition-colors p-1 leading-none rounded-lg hover:bg-brand-primary/10"
+                  aria-label="Close popover"
+                >
+                  &times;
+                </button>
+              </div>
               {/* ─── HEADER ROW ─── */}
               <div className="flex items-center justify-between gap-6 w-full pr-1">
                 {/* Coptic Word & Audio Trigger Group */}
@@ -54,14 +64,14 @@ export default function PopOver ({
                   </button>
                 </div>
     
-                {/* X Close Button */}
-                <button
+
+                {/* <button
                   onClick={() => setIsOpen(false)}
                   className="absolute top-3.5 right-3.5 text-2xl font-sans text-brand-muted/70 hover:text-brand-primary transition-colors p-1 leading-none rounded-lg hover:bg-brand-primary/10"
                   aria-label="Close popover"
                 >
                   &times;
-                </button>
+                </button> */}
               </div>
     
               {/* ─── TRANSLATIONS SIDE-BY-SIDE ─── */}
