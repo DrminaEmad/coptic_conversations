@@ -13,6 +13,7 @@ import {
 } from "@floating-ui/react";
 // import EarSvg from "./EarSvg";
 import PopOver from "./Popover";
+import { FloatingPortal } from "@floating-ui/react";
 
 
 export interface WordProps  { 
@@ -119,6 +120,7 @@ export default function SingleWord({ word,
       </span>
       
       {isOpen && (
+        <FloatingPortal>
             <PopOver  
             word={word}
             setIsOpen={setIsOpen}
@@ -130,6 +132,7 @@ export default function SingleWord({ word,
             arrowX={arrowX}
             arrowY={arrowY}
           />
+        </FloatingPortal>
       )}
 
     </div>

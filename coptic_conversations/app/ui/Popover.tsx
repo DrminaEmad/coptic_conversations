@@ -28,8 +28,7 @@ export default function PopOver ({
   arrowY
 }: WordPopoverProps) {
 
-    return <FloatingPortal>
-            <div
+    return <div
               ref={setFloatingRef}
               style={floatingStyles}
               {...getFloatingProps()}
@@ -93,6 +92,6 @@ export default function PopOver ({
                 }}
               />
             </div>
-          </FloatingPortal>
+          
     
 }
