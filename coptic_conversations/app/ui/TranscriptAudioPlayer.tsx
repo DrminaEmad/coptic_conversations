@@ -3,6 +3,7 @@
 import { useRef, useState, useEffect, useCallback } from "react";
 import { conversationData } from "../lib/data";
 import TranscriptSegmentRow from "./TranscriptSegmentRow";
+import PlayButton from "./PlayButton";
 
 export default function TranscriptAudioPlayer() {
   const audioRef = useRef<HTMLAudioElement | null>(null);
@@ -116,12 +117,16 @@ export default function TranscriptAudioPlayer() {
           <h2 className="text-xl font-bold text-brand-primary">الدرس الأول: مقدمة تعليمية</h2>
           <p className="text-sm text-brand-muted">استمع وتابع الكلمات بكل دقة وعناية</p>
         </div>
-        <button 
+        
+        <PlayButton togglePlay={togglePlay}>
+          {isPlaying ? "⏸️ Pause Dialogue" : "▶️ Play Dialogue"}
+        </PlayButton>
+        {/* <button 
           onClick={togglePlay}
           className="flex items-center gap-2 text-brand-primary px-3 md:px-6 py-3 rounded-2xl font-semibold cursor-pointer transition-transform active:scale-95 hover:bg-brand-hover hover:text-white shadow-sm   active:bg-brand-hover active:text-white"
         >
           {isPlaying ? "⏸️ Pause Dialogue" : "▶️ Play Dialogue"}
-        </button>
+        </button> */}
       </div>
       {/* 🌐 TRANSLATION CONTROLS SECTION */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-brand-muted/5 p-3 rounded-xl border border-brand-muted/10">
