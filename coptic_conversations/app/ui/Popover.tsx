@@ -32,46 +32,38 @@ export default function PopOver ({
               ref={setFloatingRef}
               style={floatingStyles}
               {...getFloatingProps()}
-              className="z-50 flex flex-col gap-4 bg-background backdrop-blur-md text-foreground p-4 rounded-2xl shadow-xl border border-brand-primary/20 min-w-[240px] max-w-[340px] animate-in fade-in zoom-in-95 duration-100 relative"
+              className="z-50 flex flex-col gap-2 bg-background backdrop-blur-md text-foreground p-4 rounded-2xl shadow-xl border border-brand-primary/20 min-w-[240px] max-w-[340px] animate-in fade-in zoom-in-95 duration-100 relative"
             > 
               {/* X Close Button */}
               <div className="flex justify-end h-min">
                 <button
                   onClick={() => setIsOpen(false)}
-                  className=" text-xl font-sans text-brand-muted/70 hover:text-brand-primary transition-colors p-1 leading-none rounded-lg hover:bg-brand-primary/10"
+                  className=" text-xs font-sans text-brand-muted/70 hover:text-brand-primary transition-colors leading-none rounded-lg hover:bg-brand-primary/10"
                   aria-label="Close popover"
                 >
                   &times;
                 </button>
               </div>
               {/* ─── HEADER ROW ─── */}
-              <div className="flex items-center justify-between gap-6 w-full pr-1">
+              <div className="flex items-center justify-between gap-6 w-full ">
                 {/* Coptic Word & Audio Trigger Group */}
                 <div className="flex items-center gap-2.5">
                   <span className="text-3xl font-coptic font-semibold tracking-wide text-brand-primary bg-brand-primary/15 px-2.5 py-1 rounded-xl">           
                     {word.coptic}
                   </span>
-                  <button
-                    onClick={handlePlayWordSound}
-                    className="p-1.5 rounded-xl text-brand-accent hover:bg-brand-accent/10 transition-colors active:scale-95"
-                    title="Play Audio"
-                  >
-                    <EarSvg 
-                      width={24} 
-                      height={30} 
-                      className="text-brand-accent"
-                    />
-                  </button>
                 </div>
-    
 
-                {/* <button
-                  onClick={() => setIsOpen(false)}
-                  className="absolute top-3.5 right-3.5 text-2xl font-sans text-brand-muted/70 hover:text-brand-primary transition-colors p-1 leading-none rounded-lg hover:bg-brand-primary/10"
-                  aria-label="Close popover"
+                <button
+                  onClick={handlePlayWordSound}
+                  className="p-1.5 rounded-xl text-brand-accent hover:bg-brand-accent/10 transition-colors active:scale-95"
+                  title="Play Audio"
                 >
-                  &times;
-                </button> */}
+                  <EarSvg 
+                    width={35} 
+                    height={30} 
+                    className="text-brand-accent"
+                  />
+                </button>
               </div>
     
               {/* ─── TRANSLATIONS SIDE-BY-SIDE ─── */}
