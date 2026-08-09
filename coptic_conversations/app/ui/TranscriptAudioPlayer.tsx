@@ -118,7 +118,7 @@ export default function TranscriptAudioPlayer() {
         </div>
         <button 
           onClick={togglePlay}
-          className="flex items-center gap-2 bg-brand-primary text-white px-6 py-3 rounded-full font-semibold cursor-pointer transition-transform active:scale-95 hover:bg-brand-hover shadow-sm"
+          className="flex items-center gap-2 text-brand-primary px-3 md:px-6 py-3 rounded-2xl font-semibold cursor-pointer transition-transform active:scale-95 hover:bg-brand-hover hover:text-white shadow-sm   active:bg-brand-hover active:text-white"
         >
           {isPlaying ? "⏸️ Pause Dialogue" : "▶️ Play Dialogue"}
         </button>
