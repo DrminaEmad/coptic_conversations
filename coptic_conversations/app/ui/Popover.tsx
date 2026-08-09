@@ -1,6 +1,5 @@
 import { WordProps } from "./word"; // Adjust this import path to match your file structure
 import EarSvg from "./EarSvg";
-import { FloatingPortal } from "@floating-ui/react";
 
 
 
@@ -10,7 +9,7 @@ export interface WordPopoverProps {
   handlePlayWordSound: (e: React.MouseEvent) => void;
   setFloatingRef: (node: HTMLDivElement | null) => void;
   floatingStyles: React.CSSProperties;
-  getFloatingProps: (userProps?: React.HTMLProps<HTMLElement>) => Record<string, any>;
+  getFloatingProps: (userProps?: React.HTMLProps<HTMLElement>) => Record<string, unknown >;
   setArrowEl: (node: HTMLDivElement | null) => void;
   arrowX: number | undefined;
   arrowY: number | undefined;
