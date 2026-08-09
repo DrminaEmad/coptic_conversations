@@ -7,12 +7,34 @@
   --hover-color: #7f1d1d;       /* Darker Red for hover */
   --accent-color: #b45309;      /* Warm Amber/Gold */
   --text-color: #64748b;        /* Muted Gray text */
+
+  /* 📱 MOBILE SIZING (Default Baseline) */
+  /* Scales the default 16px down slightly to 15px so dense Coptic/Arabic scripts */
+  /* look balanced and don't overflow on small mobile phone screens */
+  font-size: 93.75%; 
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+  }
+}
+
+/* 💻 DESKTOP SIZING (Tablets and larger screens) */
+@media (min-width: 768px) {
+  :root {
+    /* Automatically bumps the baseline up to exactly 16px (100%) on laptops/desktops */
+    /* giving you more layout space for larger text layouts */
+    font-size: 100%; 
+  }
+}
+
+/* 📺 ULTRA-WIDE SIZING (Large desktop monitors - Optional but great for classrooms) */
+@media (min-width: 1280px) {
+  :root {
+    /* Bumps the baseline to 17px (106.25%) so users sitting further back can read cleanly */
+    font-size: 106.25%; 
   }
 }
 
@@ -45,6 +67,7 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  
 }
 
 /* Custom CSS Utility Class */

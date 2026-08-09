@@ -108,10 +108,10 @@ export default function SingleWord({ word,
         e.stopPropagation(); // 🛑 BLOCKS sentence row from triggering a rewind!
       }
     })}
-       className="inline-flex flex-col items-center justify-start p-2 rounded-xl bg-brand-muted/5 border border-brand-muted/10 transition-all duration-200 select-none min-w-[70px] cursor-pointer active:scale-95">
+       className="inline-flex flex-col items-center justify-start p-2 rounded-xl bg-brand-muted/5 border border-brand-muted/10 transition-all duration-200 select-none  cursor-pointer active:scale-95">
       
       {/* 🔹 Core Target Language Text (Behaves like standard readable prose) */}
-      <span className={`text-xl sm:text-2xl md:text-3xl font-coptic tracking-wide transition-colors duration-150 py-1 px-0.5 rounded-md ${
+      <span className={` md:text-3xl font-coptic tracking-wide transition-colors duration-150 py-1 px-0.5 rounded-md ${
         isActiveRow 
           ? "text-brand-primary font-semibold bg-brand-primary/10" 
           : "text-foreground"
