@@ -16,7 +16,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="bg-background border-b border-brand-accent/20 fixed top-0 left-0 right-0 md:static z-50 h-16 flex items-center px-4 md:px-8">
+      <nav className="bg-background border-b border-brand-accent/20 fixed top-0 left-0 right-0 z-50 h-16 flex items-center px-4 md:px-8">
         <ul className="list-none flex items-center m-0 p-0 w-full h-full">
           
           <li className="mr-auto flex items-center gap-2 h-full">
@@ -56,7 +56,7 @@ export default function Navbar() {
 
       {/* 🚀 YOUR IDEA: Wrapping the sidebar in a positioning container */}
       {/* On desktop (md), this forces the sidebar to float permanently on the left side */}
-      <div className="hidden md:block fixed top-16 left-0 bottom-0 w-72 z-40">
+      <div className="hidden md:block fixed top-[6.4rem] left-0 bottom-0 w-72 z-40">
         <Sidebar isOpen={isMobileOpen} onClose={() => setIsMobileOpen(false)} />
       </div>
 

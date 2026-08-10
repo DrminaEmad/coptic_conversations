@@ -28,9 +28,9 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
           bg-white dark:bg-zinc-950 border-r border-brand-muted/20 p-6 flex flex-col gap-6 z-40
           
           /* 🖥️ Desktop Style Sheet: Underneath Navbar, flows with root layout column */
-          md:flex md:sticky md:top-0 md:h-[calc(100vh-128px)] md:translate-x-0
+          md:flex md:fixed   md:0 md:h-[calc(100vh-6.4rem)] md:translate-x-0
 
-          
+
           /* 📱 Mobile Floating Panel Style Drawer Layout */
           fixed top-16 bottom-0 left-0 w-72 transition-transform duration-300 ease-in-out 
           ${isOpen ? "translate-x-0" : "-translate-x-full "}
