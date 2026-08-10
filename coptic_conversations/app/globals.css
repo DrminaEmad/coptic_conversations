@@ -11,7 +11,7 @@
   /* 📱 MOBILE SIZING (Default Baseline) */
   /* Scales the default 16px down slightly to 15px so dense Coptic/Arabic scripts */
   /* look balanced and don't overflow on small mobile phone screens */
-  font-size: 93.75%; 
+  font-size: 62.5%; 
 }
 
 @media (prefers-color-scheme: dark) {
@@ -26,7 +26,7 @@
   :root {
     /* Automatically bumps the baseline up to exactly 16px (100%) on laptops/desktops */
     /* giving you more layout space for larger text layouts */
-    font-size: 100%; 
+    font-size: 125%; 
   }
 }
 
@@ -34,7 +34,7 @@
 @media (min-width: 1280px) {
   :root {
     /* Bumps the baseline to 17px (106.25%) so users sitting further back can read cleanly */
-    font-size: 106.25%; 
+    font-size: 135%; 
   }
 }
 

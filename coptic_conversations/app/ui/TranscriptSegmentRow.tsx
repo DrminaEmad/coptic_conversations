@@ -65,7 +65,7 @@ const TranscriptSegmentRow = memo(({
                 className={`leading-relaxed tracking-wide font-sans ${
                   translation === 'arabic'
                     ? "text-xl md:text-2xl text-brand-accent font-medium text-right leading-loose"
-                    : "text-lg md:text-xl text-brand-muted font-normal text-left"
+                    : "text-lg md:text-xl text-brand-accent font-normal text-left"
               }`}
               >
                 {displaySentence}
