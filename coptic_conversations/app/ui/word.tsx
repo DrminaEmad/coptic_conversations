@@ -89,7 +89,7 @@ export default function SingleWord({ word,
     // Dedicated word audio clip trigger handler
     const handlePlayWordSound = (e: React.MouseEvent) => {
       e.stopPropagation(); // Avoid interaction bubble-closing the popover block
-      if (word.startTime !== undefined) {
+      if (word.startTime !== undefined && word.startTime !== null) {
         onSeek(word.startTime);
       } else {
         // Fallback: Replay current word timeline starting spot if word timestamps aren't populated
