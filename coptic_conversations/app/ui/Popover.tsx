@@ -37,7 +37,7 @@ export default function PopOver ({
               <div className="flex justify-end h-min">
                 <button
                   onClick={() => setIsOpen(false)}
-                  className=" text-xs font-sans text-brand-muted/70 hover:text-brand-primary transition-colors leading-none rounded-lg hover:bg-brand-primary/10"
+                  className=" text-xs font-black font-sans text-brand-muted/70 hover:text-brand-primary transition-colors leading-none rounded-lg hover:bg-brand-primary/10"
                   aria-label="Close popover"
                 >
                   &times;
