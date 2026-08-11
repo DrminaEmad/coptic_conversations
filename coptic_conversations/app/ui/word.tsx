@@ -14,17 +14,11 @@ import {
 // import EarSvg from "./EarSvg";
 import PopOver from "./Popover";
 import { FloatingPortal } from "@floating-ui/react";
+import { DialogueWord } from "../lib/data";
 
-
-export interface WordProps  { 
-  coptic: string;
-  arabic: string; 
-  english: string;
-  startTime?: number; // Optional timestamp for word-specific audio triggers
-};
 
 interface SingleWordProps {
-    word: WordProps;
+    word: DialogueWord;
     isActiveRow: boolean;
     isPlaying: boolean;
     setIsPlaying: (playing: boolean) => void;

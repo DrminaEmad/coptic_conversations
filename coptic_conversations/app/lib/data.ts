@@ -4,6 +4,7 @@ export interface DialogueWord {
   english: string;
   arabic: string;
   startTime?:number;
+  endTime?: number 
 }
 
 export interface TranscriptSegment {
@@ -20,7 +21,7 @@ export const conversationData: TranscriptSegment[] = [
     startTime: 0.0,
     endTime: 2.0,
     words: [
-      { coptic: "Ϩⲉⲙⲥⲓ", english: "sit down", arabic: "اجلس", startTime:0.0 },
+      { coptic: "Ϩⲉⲙⲥⲓ", english: "sit down", arabic: "اجلس", startTime:0.0, endTime: 1.0 },
     ]
   },
   {
@@ -28,7 +29,7 @@ export const conversationData: TranscriptSegment[] = [
     startTime: 3.0,
     endTime: 9.0,
     words: [
-      { coptic: "̀Ⲛⲑⲱⲛ", english: "where", arabic: "اين", startTime: 4.0 },
+      { coptic: "̀Ⲛⲑⲱⲛ", english: "where", arabic: "اين", startTime: 4.0, endTime: 5.0 },
     ]
   },
   {
@@ -36,16 +37,16 @@ export const conversationData: TranscriptSegment[] = [
     startTime: 10.0,
     endTime: 14.0,
     words: [
-      { coptic: "Ϩⲉⲙⲥⲓ", english: "set down", arabic: "اجلس", startTime: 10.0 },
-      { coptic: "̀Ⲙⲛⲁⲓ", english: "beside me", arabic: "بجانبي", startTime: 11.0 }    ]
+      { coptic: "Ϩⲉⲙⲥⲓ", english: "set down", arabic: "اجلس", startTime: 10.0, endTime: 11.0 },
+      { coptic: "̀Ⲙⲛⲁⲓ", english: "beside me", arabic: "بجانبي", startTime: 11.0, endTime: 12.0 }    ]
   },
   {
     id: 4,
     startTime: 15.0,
     endTime: 19.0,
     words: [
-      { coptic: "Ϩⲓϫⲉⲛ", english: "on", arabic: "علي" , startTime: 15.0},
-      { coptic: "ⲟⲩ", english: "what", arabic: "ماذا", startTime: 16.0}
+      { coptic: "Ϩⲓϫⲉⲛ", english: "on", arabic: "علي" , startTime: 15.0, endTime: 16.0},
+      { coptic: "ⲟⲩ", english: "what", arabic: "ماذا", startTime: 16.0, endTime: 17.0}
     ]
   },
   {
@@ -53,8 +54,8 @@ export const conversationData: TranscriptSegment[] = [
     startTime: 23.0,
     endTime: 27.0, 
     words: [
-      { coptic: "Ϩⲓϫⲉⲛ", english: "on", arabic: "علي" , startTime: 23.0},
-      { coptic: "ⲡⲓⲧⲟⲧⲥ", english: "the chair", arabic: "الكرسي" , startTime: 24.0}
+      { coptic: "Ϩⲓϫⲉⲛ", english: "on", arabic: "علي" , startTime: 23.0, endTime: 24.0},
+      { coptic: "ⲡⲓⲧⲟⲧⲥ", english: "the chair", arabic: "الكرسي" , startTime: 24.0, endTime: 25.0}
     ]
   },
 ];
