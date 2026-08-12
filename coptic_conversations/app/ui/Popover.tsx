@@ -1,4 +1,4 @@
-import { WordProps } from "./word"; // Adjust this import path to match your file structure
+import { DialogueWord } from "../lib/data" ; // Adjust this import path to match your file structure
 import EarSvg from "./EarSvg";
 
 
