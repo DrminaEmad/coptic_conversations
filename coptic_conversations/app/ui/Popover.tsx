@@ -4,7 +4,7 @@ import EarSvg from "./EarSvg";
 
 
 export interface WordPopoverProps {
-  word: WordProps;
+  word: DialogueWord;
   setIsOpen: (isOpen: boolean) => void;
   handlePlayWordSound: (e: React.MouseEvent) => void;
   setFloatingRef: (node: HTMLDivElement | null) => void;
