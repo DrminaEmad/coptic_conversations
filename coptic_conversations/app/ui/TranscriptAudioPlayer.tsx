@@ -15,7 +15,44 @@ export default function TranscriptAudioPlayer() {
     const targetEndTimeRef = useRef<number | null>(null);
 
 
-  // Centralized time tracker for all rows
+
+// controlling the auto scroll functionality 
+  useEffect(() => {
+    if (activeSegmentId === null || !scrollContainerRef.current) return;
+
+    // Find the child element inside the container matching our data-id attribute
+    const activeElement = scrollContainerRef.current.querySelector(
+      `[data-id="${activeSegmentId}"]`
+    ) as HTMLElement;
+
+    if (activeElement) {
+      activeElement.scrollIntoView({
+        behavior: "smooth",   // Creates the smooth animated glide effect
+        block: "nearest",     // Intelligent positioning: moves it only if out of bounds
+        inline: "nearest",
+      });
+    }
+  }, [activeSegmentId]); 
+
+
+// handling the sound play functionality 
+
+// toggle sound on and off from the toggle button 
+  const togglePlay = () => {
+    if (!audioRef.current) return;
+
+    targetEndTimeRef.current = null;
+
+    if (isPlaying) {
+      audioRef.current.pause();
+    } else {
+      audioRef.current.play().catch(err => console.log("Interaction required:", err));
+    }
+    setIsPlaying(!isPlaying);
+  };
+
+
+  // Centralized time tracker for all rows so the active row get a different style 
   useEffect(() => {
     const audioElement = audioRef.current;
     if (!audioElement) return;
@@ -56,37 +93,7 @@ export default function TranscriptAudioPlayer() {
   }, []);
 
 
-  useEffect(() => {
-    if (activeSegmentId === null || !scrollContainerRef.current) return;
-
-    // Find the child element inside the container matching our data-id attribute
-    const activeElement = scrollContainerRef.current.querySelector(
-      `[data-id="${activeSegmentId}"]`
-    ) as HTMLElement;
-
-    if (activeElement) {
-      activeElement.scrollIntoView({
-        behavior: "smooth",   // Creates the smooth animated glide effect
-        block: "nearest",     // Intelligent positioning: moves it only if out of bounds
-        inline: "nearest",
-      });
-    }
-  }, [activeSegmentId]); 
-
-
-  const togglePlay = () => {
-    if (!audioRef.current) return;
-
-    targetEndTimeRef.current = null;
-
-    if (isPlaying) {
-      audioRef.current.pause();
-    } else {
-      audioRef.current.play().catch(err => console.log("Interaction required:", err));
-    }
-    setIsPlaying(!isPlaying);
-  };
-
+// stop and continue sound playing after closing the word popover 
   const setAudioPlayback = useCallback((playing: boolean) => {
     if (!audioRef.current) return;
     if (playing) {
@@ -98,6 +105,8 @@ export default function TranscriptAudioPlayer() {
     }
   }, []);
 
+
+  // // Jump to specific timestamp and auto-play if paused
   const handleSeek = useCallback((startTime: number, endTime: number =Infinity) => {
     if (!audioRef.current) return;
 
