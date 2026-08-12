@@ -12,11 +12,11 @@ export default function TranscriptAudioPlayer() {
   const [activeSegmentId, setActiveSegmentId] = useState<string | number | null>(null);
   const [translationMode, setTranslationMode] = useState<"english" | "arabic" | "none">("none");
   const scrollContainerRef = useRef<HTMLDivElement | null>(null);
-    const targetEndTimeRef = useRef<number | null>(null);
+  const targetEndTimeRef = useRef<number | null>(null);
 
 
 
-// controlling the auto scroll functionality 
+  // controlling the auto scroll functionality 
   useEffect(() => {
     if (activeSegmentId === null || !scrollContainerRef.current) return;
 
@@ -35,9 +35,9 @@ export default function TranscriptAudioPlayer() {
   }, [activeSegmentId]); 
 
 
-// handling the sound play functionality 
+  // handling the sound play functionality 
 
-// toggle sound on and off from the toggle button 
+  // toggle sound on and off from the toggle button 
   const togglePlay = () => {
     if (!audioRef.current) return;
 
@@ -93,7 +93,7 @@ export default function TranscriptAudioPlayer() {
   }, []);
 
 
-// stop and continue sound playing after closing the word popover 
+  // stop and continue sound playing after closing the word popover 
   const setAudioPlayback = useCallback((playing: boolean) => {
     if (!audioRef.current) return;
     if (playing) {
@@ -106,7 +106,7 @@ export default function TranscriptAudioPlayer() {
   }, []);
 
 
-  // // Jump to specific timestamp and auto-play if paused
+  // Jump to specific timestamp and auto-play if paused
   const handleSeek = useCallback((startTime: number, endTime: number =Infinity) => {
     if (!audioRef.current) return;
 
@@ -118,36 +118,6 @@ export default function TranscriptAudioPlayer() {
       .catch(err => console.log("Interaction required:", err));
   }, []);
 
-  // // Jump to specific timestamp and auto-play if paused
-  // const handleSeek = useCallback((startTime: number, endTime: number) => {
-  // // ─── REMOVE OLD BLOCKS AND REPLACE WITH THIS FROM TOP TO BOTTOM ───
-  // if (!audioRef.current) return;
-
-  // if (activeTimeUpdateRef.current) {
-  //   audioRef.current.removeEventListener("timeupdate", activeTimeUpdateRef.current);
-  // }
-
-  // audioRef.current.currentTime = startTime;
-
-  // const handleTimeUpdate = () => {
-  //   if (!audioRef.current) return;
-  //   if (audioRef.current.currentTime >= endTime) {
-  //     audioRef.current.pause();
-  //     setIsPlaying(false);
-  //     audioRef.current.removeEventListener("timeupdate", handleTimeUpdate);
-  //   }
-  // };
-
-  // activeTimeUpdateRef.current = handleTimeUpdate;
-  // audioRef.current.addEventListener("timeupdate", handleTimeUpdate);
-  
-  // if (!isPlaying) {
-  //   audioRef.current.play()
-  //     .then(() => setIsPlaying(true))
-  //     .catch(err => console.log("Interaction required:", err));
-  // }
-
-  // }, [isPlaying]);
 
   return (
       <div className="w-full max-w-3xl mx-auto p-6 bg-white dark:bg-zinc-950 rounded-2xl border border-brand-muted/20 shadow-sm flex flex-col gap-8">
