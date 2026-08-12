@@ -9,7 +9,7 @@ import EarSvg from "./EarSvg"
 interface RowProps {
   segment: TranscriptSegment;
   isActive: boolean;
-  onSeek: (startTime: number) => void; // Added click action handler type
+  onSeek: (startTime: number, endTime?: number) => void; // Added click action handler type
   isPlaying: boolean;
   setIsPlaying: (playing: boolean) => void;
   getCurrentAudioTime: () => number;

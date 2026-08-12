@@ -23,7 +23,7 @@ interface SingleWordProps {
     isPlaying: boolean;
     setIsPlaying: (playing: boolean) => void;
     getCurrentAudioTime: () => number;
-    onSeek: (startTime: number) => void;
+    onSeek: (startTime: number, endTime?: number) => void;
 }
 
 export default function SingleWord({ word,
@@ -83,8 +83,8 @@ export default function SingleWord({ word,
     // Dedicated word audio clip trigger handler
     const handlePlayWordSound = (e: React.MouseEvent) => {
       e.stopPropagation(); // Avoid interaction bubble-closing the popover block
-      if (word.startTime !== undefined && word.startTime !== null) {
-        onSeek(word.startTime);
+      if (word.startTime !== undefined && word.endTime !== null) {
+        onSeek(word.startTime, word.endTime);
       } else {
         // Fallback: Replay current word timeline starting spot if word timestamps aren't populated
         onSeek(savedTimeRef.current);

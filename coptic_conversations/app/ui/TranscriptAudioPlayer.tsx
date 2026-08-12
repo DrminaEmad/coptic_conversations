@@ -7,10 +7,13 @@ import PlayButton from "./PlayButton";
 
 export default function TranscriptAudioPlayer() {
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  // const activeTimeUpdateRef = useRef<(() => void) | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [activeSegmentId, setActiveSegmentId] = useState<string | number | null>(null);
   const [translationMode, setTranslationMode] = useState<"english" | "arabic" | "none">("none");
   const scrollContainerRef = useRef<HTMLDivElement | null>(null);
+    const targetEndTimeRef = useRef<number | null>(null);
+
 
   // Centralized time tracker for all rows
   useEffect(() => {
@@ -23,6 +26,11 @@ export default function TranscriptAudioPlayer() {
       // const match = conversationData.find(
       //   (seg) => time >= seg.startTime && time <= seg.endTime
       // );
+      if (targetEndTimeRef.current !== null && time >= targetEndTimeRef.current) {
+        audioElement.pause();
+        setIsPlaying(false);
+        targetEndTimeRef.current = null;
+      }
 
       const matchingSegments = conversationData.filter((seg) => time >= seg.startTime);
       const match = matchingSegments[matchingSegments.length - 1];
@@ -68,6 +76,9 @@ export default function TranscriptAudioPlayer() {
 
   const togglePlay = () => {
     if (!audioRef.current) return;
+
+    targetEndTimeRef.current = null;
+
     if (isPlaying) {
       audioRef.current.pause();
     } else {
@@ -87,18 +98,47 @@ export default function TranscriptAudioPlayer() {
     }
   }, []);
 
-
-  // Jump to specific timestamp and auto-play if paused
-  const handleSeek = useCallback((startTime: number) => {
+  const handleSeek = useCallback((startTime: number, endTime: number =Infinity) => {
     if (!audioRef.current) return;
+
+    targetEndTimeRef.current = endTime;
     audioRef.current.currentTime = startTime;
     
-    if (!isPlaying) {
-      audioRef.current.play()
-        .then(() => setIsPlaying(true))
-        .catch(err => console.log("Interaction required:", err));
-    }
+    audioRef.current.play()
+      .then(() => setIsPlaying(true))
+      .catch(err => console.log("Interaction required:", err));
   }, []);
+
+  // // Jump to specific timestamp and auto-play if paused
+  // const handleSeek = useCallback((startTime: number, endTime: number) => {
+  // // ─── REMOVE OLD BLOCKS AND REPLACE WITH THIS FROM TOP TO BOTTOM ───
+  // if (!audioRef.current) return;
+
+  // if (activeTimeUpdateRef.current) {
+  //   audioRef.current.removeEventListener("timeupdate", activeTimeUpdateRef.current);
+  // }
+
+  // audioRef.current.currentTime = startTime;
+
+  // const handleTimeUpdate = () => {
+  //   if (!audioRef.current) return;
+  //   if (audioRef.current.currentTime >= endTime) {
+  //     audioRef.current.pause();
+  //     setIsPlaying(false);
+  //     audioRef.current.removeEventListener("timeupdate", handleTimeUpdate);
+  //   }
+  // };
+
+  // activeTimeUpdateRef.current = handleTimeUpdate;
+  // audioRef.current.addEventListener("timeupdate", handleTimeUpdate);
+  
+  // if (!isPlaying) {
+  //   audioRef.current.play()
+  //     .then(() => setIsPlaying(true))
+  //     .catch(err => console.log("Interaction required:", err));
+  // }
+
+  // }, [isPlaying]);
 
   return (
       <div className="w-full max-w-3xl mx-auto p-6 bg-white dark:bg-zinc-950 rounded-2xl border border-brand-muted/20 shadow-sm flex flex-col gap-8">
