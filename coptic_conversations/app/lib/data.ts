@@ -589,7 +589,7 @@ export const conversationData: TranscriptSegment[] = [
           "endTime": 134.0
         },
         {
-          "coptic": "ⲛⲓⲲⲉⲛ",
+          "coptic": "ⲛⲓⲃⲉⲛ",
           "english": "all",
           "arabic": "وكل",
           "startTime": 134.4,
