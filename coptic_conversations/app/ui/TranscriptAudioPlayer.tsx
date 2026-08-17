@@ -125,7 +125,7 @@ export default function TranscriptAudioPlayer() {
       {/* 🎧 1. AUDIO ELEMENT */}
       <audio 
         ref={audioRef}
-        src="/audio/conversation_lesson1.mp3"
+        src="/audio/the_lord_prayer.mp3"
         onEnded={() => setIsPlaying(false)}
         className="hidden"
       />

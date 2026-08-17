@@ -1,33 +1,150 @@
-// types/transcript.ts
-export interface DialogueWord {
-  coptic: string;
-  english: string;
-  arabic: string;
-  startTime?:number;
-  endTime?: number 
-}
-
-export interface TranscriptSegment {
-  id: number;
-  startTime: number;  // Time in seconds when segment starts
-  endTime: number;    // Time in seconds when segment ends
-  words: DialogueWord[];
-}
-
-// Example data array inside your database or route page
-export const conversationData: TranscriptSegment[] = [
+{
+  "conversationData": [
     {
       "id": 1,
-      "startTime": 0.0,
-      "endTime": 11.0,
+      "startTime": 0,
+      "endTime": 5.5,
       "words": [
+        {
+          "coptic": "Ϧⲉⲛ",
+          "english": "In",
+          "arabic": "باسم",
+          "startTime": 0,
+          "endTime": 0.8
+        },
+        {
+          "coptic": "ⲡ̀ⲣⲁⲛ",
+          "english": "the name",
+          "arabic": "الآب",
+          "startTime": 0.8,
+          "endTime": 1.5
+        },
+        {
+          "coptic": "ⲙ̀Ⲫⲓⲱⲧ",
+          "english": "of the Father",
+          "arabic": "الآب",
+          "startTime": 1.5,
+          "endTime": 2.5
+        },
+        {
+          "coptic": "ⲛⲉⲙ",
+          "english": "and",
+          "arabic": "و",
+          "startTime": 2.5,
+          "endTime": 2.9
+        },
+        {
+          "coptic": "ⲡ̀Ϣⲏⲣⲓ",
+          "english": "the Son",
+          "arabic": "الابن",
+          "startTime": 2.9,
+          "endTime": 3.8
+        },
+        {
+          "coptic": "ⲛⲉⲙ",
+          "english": "and",
+          "arabic": "و",
+          "startTime": 3.8,
+          "endTime": 4.2
+        },
+        {
+          "coptic": "ⲡⲓⲠⲛⲉⲩⲙⲁ",
+          "english": "the Spirit",
+          "arabic": "الروح",
+          "startTime": 4.2,
+          "endTime": 5
+        },
+        {
+          "coptic": "Ⲉⲑⲟⲩⲁⲛⲃ",
+          "english": "Holy",
+          "arabic": "القدس",
+          "startTime": 5,
+          "endTime": 5.5
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "startTime": 5.5,
+      "endTime": 9,
+      "words": [
+        {
+          "coptic": "Ⲟⲩⲛⲟⲩϯ",
+          "english": "One God",
+          "arabic": "إله واحد",
+          "startTime": 5.5,
+          "endTime": 7
+        },
+        {
+          "coptic": "ⲛ̀ⲟⲩⲱⲧ",
+          "english": "Only One",
+          "arabic": "واحد",
+          "startTime": 7,
+          "endTime": 7.8
+        },
+        {
+          "coptic": "Ⲁ̀ⲙⲏⲛ",
+          "english": "Amen",
+          "arabic": "آمين",
+          "startTime": 7.8,
+          "endTime": 9
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "startTime": 9,
+      "endTime": 14.5,
+      "words": [
+        {
+          "coptic": "Ⲁ̀ⲣⲓⲧⲉⲛ",
+          "english": "Make us",
+          "arabic": "اجعلنا",
+          "startTime": 9,
+          "endTime": 10.2
+        },
+        {
+          "coptic": "ⲛ̀ⲉⲙ̀ⲡϣⲁ",
+          "english": "worthy",
+          "arabic": "مستحقين",
+          "startTime": 10.2,
+          "endTime": 11.8
+        },
+        {
+          "coptic": "ⲛ̀ϫⲟⲥ",
+          "english": "to say",
+          "arabic": "أن نقول",
+          "startTime": 11.8,
+          "endTime": 12.5
+        },
+        {
+          "coptic": "Ϧⲉⲛ",
+          "english": "with",
+          "arabic": "بـ",
+          "startTime": 12.5,
+          "endTime": 13
+        },
+        {
+          "coptic": "ⲟⲩⲱⲉⲡ̀ϩⲙⲟⲧ",
+          "english": "thanksgiving",
+          "arabic": "شكر",
+          "startTime": 13,
+          "endTime": 14
+        },
         {
           "coptic": "ϫⲉ",
           "english": "saying",
           "arabic": "قائلين",
           "startTime": 14,
           "endTime": 14.5
-        },
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "startTime": 14.5,
+      "endTime": 18.5,
+      "words": [
         {
           "coptic": "Ⲡⲉⲛⲓⲱⲧ",
           "english": "Our Father",
@@ -59,9 +176,9 @@ export const conversationData: TranscriptSegment[] = [
       ]
     },
     {
-      "id": 2,
-      "startTime": 12.0,
-      "endTime": 23.0,
+      "id": 5,
+      "startTime": 18.5,
+      "endTime": 22.5,
       "words": [
         {
           "coptic": "ⲛ̀ϫⲉ",
@@ -101,9 +218,9 @@ export const conversationData: TranscriptSegment[] = [
       ]
     },
     {
-      "id": 3,
-      "startTime": 23.5,
-      "endTime": 38.0,
+      "id": 6,
+      "startTime": 22.5,
+      "endTime": 26.5,
       "words": [
         {
           "coptic": "ⲡⲉⲧⲉϩⲛⲁⲕ",
@@ -143,9 +260,9 @@ export const conversationData: TranscriptSegment[] = [
       ]
     },
     {
-      "id": 4,
-      "startTime": 38.5,
-      "endTime": 45.0,
+      "id": 7,
+      "startTime": 26.5,
+      "endTime": 29.5,
       "words": [
         {
           "coptic": "ⲛⲉⲙ",
@@ -171,9 +288,9 @@ export const conversationData: TranscriptSegment[] = [
       ]
     },
     {
-      "id": 5,
-      "startTime": 45.5,
-      "endTime": 58.0,
+      "id": 8,
+      "startTime": 29.5,
+      "endTime": 34,
       "words": [
         {
           "coptic": "ⲡⲉⲛⲱⲓⲕ",
@@ -220,9 +337,9 @@ export const conversationData: TranscriptSegment[] = [
       ]
     },
     {
-      "id": 6,
-      "startTime": 58.5,
-      "endTime": 64.0,
+      "id": 9,
+      "startTime": 34,
+      "endTime": 38.5,
       "words": [
         {
           "coptic": "ⲟⲩⲟϩ",
@@ -262,9 +379,9 @@ export const conversationData: TranscriptSegment[] = [
       ]
     },
     {
-      "id": 7,
-      "startTime": 64.5,
-      "endTime": 77.0,
+      "id": 10,
+      "startTime": 38.5,
+      "endTime": 43.5,
       "words": [
         {
           "coptic": "ⲙ̀ⲫⲣⲏϯ",
@@ -318,9 +435,9 @@ export const conversationData: TranscriptSegment[] = [
       ]
     },
     {
-      "id": 8,
-      "startTime": 79.0,
-      "endTime": 86.0,
+      "id": 11,
+      "startTime": 43.5,
+      "endTime": 48,
       "words": [
         {
           "coptic": "ⲟⲩⲟϩ",
@@ -353,9 +470,9 @@ export const conversationData: TranscriptSegment[] = [
       ]
     },
     {
-      "id": 9,
-      "startTime": 86.5,
-      "endTime": 93.5,
+      "id": 12,
+      "startTime": 48,
+      "endTime": 52.5,
       "words": [
         {
           "coptic": "ⲁⲗⲗⲁ",
@@ -388,9 +505,9 @@ export const conversationData: TranscriptSegment[] = [
       ]
     },
     {
-      "id": 10,
-      "startTime": 93.5,
-      "endTime": 101,
+      "id": 13,
+      "startTime": 52.5,
+      "endTime": 57,
       "words": [
         {
           "coptic": "Ϧⲉⲛ",
@@ -423,9 +540,9 @@ export const conversationData: TranscriptSegment[] = [
       ]
     },
     {
-      "id": 11,
-      "startTime": 101.5,
-      "endTime": 115.0,
+      "id": 14,
+      "startTime": 57,
+      "endTime": 63,
       "words": [
         {
           "coptic": "ϫⲉ",
@@ -507,9 +624,9 @@ export const conversationData: TranscriptSegment[] = [
       ]
     },
     {
-      "id": 12,
-      "startTime": 115.5,
-      "endTime": 130.0,
+      "id": 15,
+      "startTime": 63,
+      "endTime": 68.5,
       "words": [
         {
           "coptic": "Ⲡⲓⲱⲟⲩ",
@@ -563,9 +680,9 @@ export const conversationData: TranscriptSegment[] = [
       ]
     },
     {
-      "id": 13,
-      "startTime": 130.5,
-      "endTime": 145.0,
+      "id": 16,
+      "startTime": 68.5,
+      "endTime": 74,
       "words": [
         {
           "coptic": "ϯⲛⲟⲩ",
@@ -640,51 +757,5 @@ export const conversationData: TranscriptSegment[] = [
       ]
     }
   ]
+}
 
-
-
-
-//  [
-//   {
-//     id: 1,
-//     startTime: 0.0,
-//     endTime: 2.0,
-//     words: [
-//       { coptic: "Ϩⲉⲙⲥⲓ", english: "sit down", arabic: "اجلس", startTime:0.0, endTime: 1.0 },
-//     ]
-//   },
-//   {
-//     id: 2,
-//     startTime: 3.0,
-//     endTime: 9.0,
-//     words: [
-//       { coptic: "̀Ⲛⲑⲱⲛ", english: "where", arabic: "اين", startTime: 4.0, endTime: 5.0 },
-//     ]
-//   },
-//   {
-//     id: 3,
-//     startTime: 10.0,
-//     endTime: 14.0,
-//     words: [
-//       { coptic: "Ϩⲉⲙⲥⲓ", english: "set down", arabic: "اجلس", startTime: 10.0, endTime: 11.0 },
-//       { coptic: "̀Ⲙⲛⲁⲓ", english: "beside me", arabic: "بجانبي", startTime: 11.0, endTime: 12.0 }    ]
-//   },
-//   {
-//     id: 4,
-//     startTime: 15.0,
-//     endTime: 19.0,
-//     words: [
-//       { coptic: "Ϩⲓϫⲉⲛ", english: "on", arabic: "علي" , startTime: 15.0, endTime: 16.0},
-//       { coptic: "ⲟⲩ", english: "what", arabic: "ماذا", startTime: 16.0, endTime: 17.0}
-//     ]
-//   },
-//   {
-//     id: 5,
-//     startTime: 23.0,
-//     endTime: 27.0, 
-//     words: [
-//       { coptic: "Ϩⲓϫⲉⲛ", english: "on", arabic: "علي" , startTime: 23.0, endTime: 24.0},
-//       { coptic: "ⲡⲓⲧⲟⲧⲥ", english: "the chair", arabic: "الكرسي" , startTime: 24.0, endTime: 25.0}
-//     ]
-//   },
-// ];
