@@ -33,7 +33,7 @@ const TranscriptSegmentRow = memo(({
   return (
     <div 
       onClick={() => onSeek(segment.startTime)} // Triggers timeline jump on click
-      className={`p-4 rounded-xl transition-all duration-300 border cursor-pointer select-none flex items-center justify-between gap-4 ${
+      className={`p-4 rounded-xl transition-all duration-300 border cursor-pointer select-none flex items-center justify-between gap-1 ${
         isActive 
           ? "bg-brand-primary/5 dark:bg-brand-primary/10 border-brand-primary/20 shadow-xs scale-[1.01]" 
           : "bg-transparent border-transparent opacity-60 hover:opacity-100 hover:bg-brand-muted/5"
@@ -41,7 +41,7 @@ const TranscriptSegmentRow = memo(({
     >
       {/* Coptic Main Sentence Layer */}
       <div className="flex-1 flex flex-col justify-center">
-        <div className="flex flex-wrap gap-x-3 gap-y-1 mb-2">
+        <div className="flex flex-wrap gap-x-1 gap-y-1 mb-4">
           {segment.words.map((word, index) => (
             <div 
               key={`${word.coptic}-${index}`}  

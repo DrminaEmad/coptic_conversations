@@ -102,7 +102,7 @@ export default function SingleWord({ word,
         e.stopPropagation(); // 🛑 BLOCKS sentence row from triggering a rewind!
       }
     })}
-       className="inline-flex flex-col items-center justify-start p-2 transition-all duration-200 select-none  cursor-pointer active:scale-95">
+       className="inline-flex flex-col items-center justify-start  transition-all duration-200 select-none  cursor-pointer active:scale-95">
       
       {/* 🔹 Core Target Language Text (Behaves like standard readable prose) */}
       <span className={`font-coptic tracking-wide transition-colors duration-150 py-1 px-0.5 rounded-md ${
