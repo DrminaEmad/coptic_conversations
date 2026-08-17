@@ -1,10 +1,10 @@
-import { WordProps } from "./word"; // Adjust this import path to match your file structure
+import { DialogueWord } from "../lib/data" ; // Adjust this import path to match your file structure
 import EarSvg from "./EarSvg";
 
 
 
 export interface WordPopoverProps {
-  word: WordProps;
+  word: DialogueWord;
   setIsOpen: (isOpen: boolean) => void;
   handlePlayWordSound: (e: React.MouseEvent) => void;
   setFloatingRef: (node: HTMLDivElement | null) => void;

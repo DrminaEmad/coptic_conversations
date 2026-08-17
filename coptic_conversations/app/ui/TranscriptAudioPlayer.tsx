@@ -36,7 +36,6 @@ export default function TranscriptAudioPlayer() {
 
 
   // handling the sound play functionality 
-
   // toggle sound on and off from the toggle button 
   const togglePlay = () => {
     if (!audioRef.current) return;
