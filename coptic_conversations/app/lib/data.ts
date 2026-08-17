@@ -25,36 +25,36 @@ export const conversationData: TranscriptSegment[] = [
           "coptic": "ϫⲉ",
           "english": "saying",
           "arabic": "قائلين",
-          "startTime": 14,
-          "endTime": 14.5
+          "startTime": 0.0,
+          "endTime": 2.0
         },
         {
           "coptic": "Ⲡⲉⲛⲓⲱⲧ",
           "english": "Our Father",
           "arabic": "أبانا",
-          "startTime": 14.5,
-          "endTime": 15.5
+          "startTime": 2.5,
+          "endTime": 4.0
         },
         {
           "coptic": "ⲉⲧϦⲉⲛ",
           "english": "who is in",
           "arabic": "الذي في",
-          "startTime": 15.5,
-          "endTime": 16.5
+          "startTime": 4.5,
+          "endTime": 6.0
         },
         {
           "coptic": "ⲛⲓⲫⲏⲟⲩⲓ̀",
           "english": "the heavens",
           "arabic": "السموات",
-          "startTime": 16.5,
-          "endTime": 17.5
+          "startTime": 6.5,
+          "endTime": 8.0
         },
         {
           "coptic": "ⲙⲁⲣⲉϥⲧⲟⲩⲃⲟ",
           "english": "hallowed be",
           "arabic": "ليتقدس",
-          "startTime": 17.5,
-          "endTime": 18.5
+          "startTime": 8.5,
+          "endTime": 11.0
         }
       ]
     },
@@ -67,36 +67,36 @@ export const conversationData: TranscriptSegment[] = [
           "coptic": "ⲛ̀ϫⲉ",
           "english": "(subject marker)",
           "arabic": "اسمك",
-          "startTime": 18.5,
-          "endTime": 19
+          "startTime": 12.0,
+          "endTime": 12.5
         },
         {
           "coptic": "ⲡⲉⲕⲣⲁⲛ",
           "english": "your name",
           "arabic": "اسمك",
-          "startTime": 19,
-          "endTime": 20
+          "startTime": 13,
+          "endTime": 15
         },
         {
           "coptic": "ⲙⲁⲣⲉⲥⲓ̀",
           "english": "let it come",
           "arabic": "لتأتي",
-          "startTime": 20,
-          "endTime": 21
+          "startTime": 16,
+          "endTime": 19
         },
         {
           "coptic": "ⲛ̀ϫⲉ",
           "english": "(subject marker)",
           "arabic": "ملكوتك",
-          "startTime": 21,
-          "endTime": 21.5
+          "startTime": 20,
+          "endTime": 20.5
         },
         {
           "coptic": "ⲧⲉⲕⲙⲉⲧⲟⲩⲣⲟ",
           "english": "your kingdom",
           "arabic": "ملكوتك",
-          "startTime": 21.5,
-          "endTime": 22.5
+          "startTime": 21.0,
+          "endTime": 23.0
         }
       ]
     },
@@ -109,36 +109,36 @@ export const conversationData: TranscriptSegment[] = [
           "coptic": "ⲡⲉⲧⲉϩⲛⲁⲕ",
           "english": "your will",
           "arabic": "مشيئتك",
-          "startTime": 22.5,
-          "endTime": 23.5
+          "startTime": 23.5,
+          "endTime": 26.0
         },
         {
           "coptic": "ⲙⲁⲣⲉϥϣⲱⲡⲓ",
           "english": "let it be done",
           "arabic": "لتكن",
-          "startTime": 23.5,
-          "endTime": 24.5
+          "startTime": 26.5,
+          "endTime": 30.5
         },
         {
           "coptic": "ⲙ̀ⲫⲣⲏϯ",
           "english": "as / like",
           "arabic": "كما",
-          "startTime": 24.5,
-          "endTime": 25.5
+          "startTime": 31.0,
+          "endTime": 34.0
         },
         {
           "coptic": "Ϧⲉⲛ",
           "english": "in",
           "arabic": "في",
-          "startTime": 25.5,
-          "endTime": 26
+          "startTime": 35.0,
+          "endTime": 36.0
         },
         {
           "coptic": "ⲧ̀ⲫⲉ",
           "english": "heaven",
           "arabic": "السماء",
-          "startTime": 26,
-          "endTime": 26.5
+          "startTime": 36.5,
+          "endTime": 38
         }
       ]
     },
@@ -151,22 +151,22 @@ export const conversationData: TranscriptSegment[] = [
           "coptic": "ⲛⲉⲙ",
           "english": "and",
           "arabic": "كذلك",
-          "startTime": 26.5,
-          "endTime": 27
+          "startTime": 38.5,
+          "endTime": 39
         },
         {
           "coptic": "ϩⲓϫⲉⲛ",
           "english": "on",
           "arabic": "على",
-          "startTime": 27,
-          "endTime": 28
+          "startTime": 40.0,
+          "endTime": 41.5
         },
         {
           "coptic": "ⲡⲓⲕⲁϩⲓ",
           "english": "the earth",
           "arabic": "الأرض",
-          "startTime": 28,
-          "endTime": 29.5
+          "startTime": 42.0,
+          "endTime": 45.0
         }
       ]
     },
@@ -179,43 +179,43 @@ export const conversationData: TranscriptSegment[] = [
           "coptic": "ⲡⲉⲛⲱⲓⲕ",
           "english": "our bread",
           "arabic": "خبزنا",
-          "startTime": 29.5,
-          "endTime": 30.5
+          "startTime": 45.5,
+          "endTime": 48.0
         },
         {
           "coptic": "ⲛ̀ⲧⲉ",
           "english": "of",
           "arabic": "الذي لـ",
-          "startTime": 30.5,
-          "endTime": 31
+          "startTime": 48.5,
+          "endTime": 49.5
         },
         {
           "coptic": "ⲣⲁⲥϯ",
           "english": "tomorrow",
           "arabic": "الغد / الآتي",
-          "startTime": 31,
-          "endTime": 32
+          "startTime": 50.0,
+          "endTime": 51.0
         },
         {
           "coptic": "ⲙⲏⲓϥ",
           "english": "give it",
           "arabic": "أعطنا",
-          "startTime": 32,
-          "endTime": 32.7
+          "startTime": 51.5,
+          "endTime": 53.0
         },
         {
           "coptic": "ⲛⲁⲛ",
           "english": "to us",
           "arabic": "إيانا",
-          "startTime": 32.7,
-          "endTime": 33.2
+          "startTime": 53.5,
+          "endTime": 55.0
         },
         {
           "coptic": "ⲙ̀ⲫⲟⲟⲩ",
           "english": "today",
           "arabic": "اليوم",
-          "startTime": 33.2,
-          "endTime": 34
+          "startTime": 55.5,
+          "endTime": 58.0
         }
       ]
     },
@@ -228,36 +228,36 @@ export const conversationData: TranscriptSegment[] = [
           "coptic": "ⲟⲩⲟϩ",
           "english": "and",
           "arabic": "و",
-          "startTime": 34,
-          "endTime": 34.5
+          "startTime": 58.5,
+          "endTime": 59.0
         },
         {
           "coptic": "ⲭⲁ",
           "english": "forgive",
           "arabic": "اترك",
-          "startTime": 34.5,
-          "endTime": 35.5
+          "startTime": 59.5,
+          "endTime": 60.0
         },
         {
           "coptic": "ⲛⲏⲉⲧⲉⲣⲟⲛ",
           "english": "our debts",
           "arabic": "ما علينا",
-          "startTime": 35.5,
-          "endTime": 37
+          "startTime": 60.5,
+          "endTime": 62.0
         },
         {
           "coptic": "ⲛⲁⲛ",
           "english": "to us",
           "arabic": "لنا",
-          "startTime": 37,
-          "endTime": 37.5
+          "startTime": 62.5,
+          "endTime": 63.0
         },
         {
           "coptic": "ⲉ̀ⲃⲟⲗ",
           "english": "away",
           "arabic": "خارجاً",
-          "startTime": 37.5,
-          "endTime": 38.5
+          "startTime": 63.5,
+          "endTime": 64.0
         }
       ]
     },
@@ -270,53 +270,53 @@ export const conversationData: TranscriptSegment[] = [
           "coptic": "ⲙ̀ⲫⲣⲏϯ",
           "english": "as / like",
           "arabic": "كما",
-          "startTime": 38.5,
-          "endTime": 39.3
+          "startTime": 64.5,
+          "endTime": 67.0
         },
         {
           "coptic": "ϩⲱⲛ",
           "english": "we also",
           "arabic": "نحن أيضاً",
-          "startTime": 39.3,
-          "endTime": 40
+          "startTime": 67.5,
+          "endTime": 68
         },
         {
           "coptic": "ⲛ̀ⲧⲉⲛⲭⲱ",
           "english": "we forgive",
           "arabic": "نترك",
-          "startTime": 40,
-          "endTime": 41.3
+          "startTime": 68.5,
+          "endTime": 69.5
         },
         {
           "coptic": "ⲉ̀ⲃⲟⲗ",
           "english": "away",
           "arabic": "خارجاً",
-          "startTime": 41.3,
-          "endTime": 41.7
+          "startTime": 70.0,
+          "endTime": 72.0
         },
         {
           "coptic": "ⲛⲏⲉⲧⲉ",
           "english": "those who",
           "arabic": "للمذنبين",
-          "startTime": 41.7,
-          "endTime": 42.5
+          "startTime": 73.0,
+          "endTime": 75.0
         },
         {
           "coptic": "ⲟⲩⲟⲛ",
           "english": "have",
           "arabic": "إلينا",
-          "startTime": 42.5,
-          "endTime": 43
+          "startTime": 75.5,
+          "endTime": 76.0
         },
         {
           "coptic": "ⲛ̀ⲧⲁⲛ",
           "english": "against us",
           "arabic": "علينا",
-          "startTime": 43,
-          "endTime": 43.5
+          "startTime": 76.5,
+          "endTime": 77.0
         }
       ]
-    },
+    }, 
     {
       "id": 8,
       "startTime": 79.0,
@@ -326,29 +326,29 @@ export const conversationData: TranscriptSegment[] = [
           "coptic": "ⲟⲩⲟϩ",
           "english": "and",
           "arabic": "و",
-          "startTime": 43.5,
-          "endTime": 44
+          "startTime": 79.0,
+          "endTime": 80.0
         },
         {
           "coptic": "ⲙ̀ⲡⲉⲣⲉⲛⲧⲉⲛ",
           "english": "lead us not",
           "arabic": "لا تدخلنا",
-          "startTime": 44,
-          "endTime": 45.5
+          "startTime": 80.5,
+          "endTime": 82.0
         },
         {
           "coptic": "ⲉ̀Ϧⲟⲩⲛ",
           "english": "into",
           "arabic": "في",
-          "startTime": 45.5,
-          "endTime": 46.3
+          "startTime": 82.5,
+          "endTime": 83.0
         },
         {
           "coptic": "ⲉ̀ⲡⲓⲣⲁⲥⲙⲟⲥ",
           "english": "temptation",
           "arabic": "تجربة",
-          "startTime": 46.3,
-          "endTime": 48
+          "startTime": 83.5,
+          "endTime": 86.0
         }
       ]
     },
@@ -361,29 +361,29 @@ export const conversationData: TranscriptSegment[] = [
           "coptic": "ⲁⲗⲗⲁ",
           "english": "but",
           "arabic": "لكن",
-          "startTime": 48,
-          "endTime": 48.7
+          "startTime": 86.5,
+          "endTime": 89.0
         },
         {
           "coptic": "ⲛⲁϩⲙⲉⲛ",
           "english": "deliver us",
           "arabic": "نجنا",
-          "startTime": 48.7,
-          "endTime": 49.7
+          "startTime": 89.5,
+          "endTime": 90.0
         },
         {
           "coptic": "ⲉ̀ⲃⲟⲗϩⲁ",
           "english": "from",
           "arabic": "من",
-          "startTime": 49.7,
-          "endTime": 50.5
+          "startTime": 90.5,
+          "endTime": 91.0
         },
         {
           "coptic": "ⲡⲓⲡⲉⲧϩⲱⲟⲩ",
           "english": "the evil one",
           "arabic": "الشرير",
-          "startTime": 50.5,
-          "endTime": 52.5
+          "startTime": 91.5,
+          "endTime": 93.5
         }
       ]
     },
@@ -396,29 +396,29 @@ export const conversationData: TranscriptSegment[] = [
           "coptic": "Ϧⲉⲛ",
           "english": "in / through",
           "arabic": "بـ",
-          "startTime": 52.5,
-          "endTime": 53
+          "startTime": 93.5,
+          "endTime": 94.5
         },
         {
           "coptic": "Ⲡⲓⲭⲣⲓⲥⲧⲟⲥ",
           "english": "Christ",
           "arabic": "المسيح",
-          "startTime": 53,
-          "endTime": 54
+          "startTime": 95.0,
+          "endTime": 97.0
         },
         {
           "coptic": "Ⲓⲏⲥⲟⲩⲥ",
           "english": "Jesus",
           "arabic": "يسوع",
-          "startTime": 54,
-          "endTime": 55
+          "startTime": 97.5,
+          "endTime": 98.0
         },
         {
           "coptic": "Ⲡⲉⲛϭⲟⲓⲥ",
           "english": "our Lord",
           "arabic": "ربنا",
-          "startTime": 55,
-          "endTime": 57
+          "startTime": 98.5,
+          "endTime": 101.0
         }
       ]
     },
@@ -431,78 +431,78 @@ export const conversationData: TranscriptSegment[] = [
           "coptic": "ϫⲉ",
           "english": "for",
           "arabic": "لأن",
-          "startTime": 57,
-          "endTime": 57.5
+          "startTime": 101.5,
+          "endTime": 102.0
         },
         {
           "coptic": "ⲑⲱⲕ",
           "english": "thine",
           "arabic": "لك",
-          "startTime": 57.5,
-          "endTime": 58.2
+          "startTime": 102.5,
+          "endTime": 103.0
         },
         {
           "coptic": "ⲧⲉ",
           "english": "is",
           "arabic": "هو",
-          "startTime": 58.2,
-          "endTime": 58.6
+          "startTime": 103.5,
+          "endTime": 104.0
         },
         {
           "coptic": "ϯⲙⲉⲧⲟⲩⲣⲟ",
           "english": "the kingdom",
           "arabic": "الملك",
-          "startTime": 58.6,
-          "endTime": 59.8
+          "startTime": 104.5,
+          "endTime": 106.0
         },
         {
           "coptic": "ⲛⲉⲙ",
           "english": "and",
           "arabic": "و",
-          "startTime": 59.8,
-          "endTime": 60.2
+          "startTime": 106.5,
+          "endTime": 107.0
         },
         {
           "coptic": "ϯϫⲟⲙ",
           "english": "the power",
           "arabic": "القوة",
-          "startTime": 60.2,
-          "endTime": 61
+          "startTime": 107.5,
+          "endTime": 109.0
         },
         {
           "coptic": "ⲛⲉⲙ",
           "english": "and",
           "arabic": "و",
-          "startTime": 61,
-          "endTime": 61.4
+          "startTime": 109.5,
+          "endTime": 110.0
         },
         {
           "coptic": "ⲡⲓⲱⲟⲩ",
           "english": "the glory",
           "arabic": "المجد",
-          "startTime": 61.4,
-          "endTime": 62.2
+          "startTime": 110.1,
+          "endTime": 111.0
         },
         {
           "coptic": "ϣⲁ",
           "english": "unto",
           "arabic": "إلى",
-          "startTime": 62.2,
-          "endTime": 62.5
+          "startTime": 111.2,
+          "endTime": 112.0
         },
         {
           "coptic": "ⲉⲛⲉϩ",
           "english": "eternity",
           "arabic": "الأبد",
-          "startTime": 62.5,
-          "endTime": 62.8
+          "startTime": 112.5,
+          "endTime": 114.0
         },
         {
           "coptic": "Ⲁ̀ⲙⲏⲛ",
           "english": "Amen",
           "arabic": "آمين",
-          "startTime": 62.8,
-          "endTime": 63
+          "startTime": 114.1,
+          "endTime": 115.0
         }
       ]
     },
@@ -515,50 +515,50 @@ export const conversationData: TranscriptSegment[] = [
           "coptic": "Ⲡⲓⲱⲟⲩ",
           "english": "Glory",
           "arabic": "المجد",
-          "startTime": 63,
-          "endTime": 63.8
+          "startTime": 115.5,
+          "endTime": 118.0
         },
         {
           "coptic": "ⲙ̀Ⲫⲓⲱⲧ",
           "english": "to the Father",
           "arabic": "للآب",
-          "startTime": 63.8,
-          "endTime": 64.8
+          "startTime": 118.5,
+          "endTime": 120.0
         },
         {
           "coptic": "ⲛⲉⲙ",
           "english": "and",
           "arabic": "و",
-          "startTime": 64.8,
-          "endTime": 65.2
+          "startTime": 120.5,
+          "endTime": 121.0
         },
         {
           "coptic": "ⲡ̀Ϣⲏⲣⲓ",
           "english": "the Son",
           "arabic": "الابن",
-          "startTime": 65.2,
-          "endTime": 66.2
+          "startTime": 121.2,
+          "endTime": 123.0
         },
         {
           "coptic": "ⲛⲉⲙ",
           "english": "and",
           "arabic": "و",
-          "startTime": 66.2,
-          "endTime": 66.6
+          "startTime": 123.1,
+          "endTime": 123.6
         },
         {
           "coptic": "ⲡⲓⲠⲛⲉⲩⲙⲁ",
           "english": "the Spirit",
           "arabic": "الروح",
-          "startTime": 66.6,
-          "endTime": 67.8
+          "startTime": 123.7,
+          "endTime": 126.0
         },
         {
           "coptic": "Ⲉⲑⲟⲩⲁⲛⲃ",
           "english": "Holy",
           "arabic": "القدس",
-          "startTime": 67.8,
-          "endTime": 68.5
+          "startTime": 126.5,
+          "endTime": 130.0
         }
       ]
     },
@@ -571,72 +571,65 @@ export const conversationData: TranscriptSegment[] = [
           "coptic": "ϯⲛⲟⲩ",
           "english": "Now",
           "arabic": "الآن",
-          "startTime": 68.5,
-          "endTime": 69.2
+          "startTime": 130.0,
+          "endTime": 131.5
         },
         {
           "coptic": "ⲛⲉⲙ",
           "english": "and",
           "arabic": "و",
-          "startTime": 69.2,
-          "endTime": 69.6
+          "startTime": 131.5,
+          "endTime": 132.0
         },
         {
           "coptic": "ⲛ̀ⲥⲏⲟⲩ",
           "english": "times",
           "arabic": "كل أوان",
-          "startTime": 69.6,
-          "endTime": 70.4
+          "startTime": 132.5,
+          "endTime": 134.0
         },
         {
           "coptic": "ⲛⲓⲲⲉⲛ",
           "english": "all",
           "arabic": "وكل",
-          "startTime": 70.4,
-          "endTime": 71
+          "startTime": 134.4,
+          "endTime": 136.0
         },
         {
           "coptic": "ⲛⲉⲙ",
           "english": "and",
           "arabic": "و",
-          "startTime": 71,
-          "endTime": 71.4
+          "startTime": 137.0,
+          "endTime": 137.5
         },
         {
           "coptic": "ϣⲁ",
           "english": "unto",
           "arabic": "إلى",
-          "startTime": 71.4,
-          "endTime": 71.8
+          "startTime": 137.5,
+          "endTime": 138.5
         },
         {
           "coptic": "ⲉⲛⲉϩ",
           "english": "age",
           "arabic": "دهر",
-          "startTime": 71.8,
-          "endTime": 72.3
+          "startTime": 139.0,
+          "endTime": 140.0
         },
         {
           "coptic": "ⲛ̀ⲧⲉ",
           "english": "of",
           "arabic": "الدهور",
-          "startTime": 72.3,
-          "endTime": 72.6
+          "startTime": 140.3,
+          "endTime": 140.6
         },
         {
           "coptic": "ⲛⲓⲉⲛⲉϩ",
           "english": "the ages",
           "arabic": "كلها",
-          "startTime": 72.6,
-          "endTime": 73.2
+          "startTime": 140.7,
+          "endTime": 145.0
         },
-        {
-          "coptic": "Ⲁ̀ⲙⲏⲛ",
-          "english": "Amen",
-          "arabic": "آمين",
-          "startTime": 73.2,
-          "endTime": 74
-        }
       ]
     }
   ]
