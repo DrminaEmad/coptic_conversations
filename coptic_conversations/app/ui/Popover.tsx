@@ -31,7 +31,7 @@ export default function PopOver ({
               ref={setFloatingRef}
               style={floatingStyles}
               {...getFloatingProps()}
-              className="z-50 flex flex-col gap-2 bg-background backdrop-blur-md text-foreground p-4 rounded-2xl shadow-xl border border-brand-primary/20 min-w-[240px] max-w-[340px] animate-in fade-in zoom-in-95 duration-100 relative"
+              className="z-50 flex flex-col gap-2 bg-background backdrop-blur-md text-foreground p-4 rounded-2xl shadow-xl border border-brand-primary/20 min-w-[240px] max-w-full animate-in fade-in zoom-in-95 duration-100 relative"
             > 
               {/* X Close Button */}
               <div className="flex justify-end h-min">
