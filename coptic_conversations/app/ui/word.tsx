@@ -51,7 +51,16 @@ export default function SingleWord({ word,
         arrow({ element: arrowEl }) // Track custom tooltip visual pointer arrow
       ],
     });
+  const  currentTime = getCurrentAudioTime(); 
 
+// check if the word is currently being played :
+const activeWord = 
+  word.startTime !== undefined && 
+  word.endTime !== undefined && 
+  currentTime >= word.startTime && 
+  currentTime <= word.endTime;
+
+  // stop sound playing when the word clicked 
   useEffect(() => {
       if (isOpen) {
         savedTimeRef.current = getCurrentAudioTime(); 
@@ -62,6 +71,8 @@ export default function SingleWord({ word,
         }
       }
     }, [isOpen]);
+
+
     // Attach clicking and dismiss behavior hooks
     const click = useClick(context);
     const dismiss = useDismiss(context);
