@@ -23,8 +23,8 @@ export const conversationData: TranscriptSegment[] = [
       "words": [
         {
           "coptic": "ϫⲉ",
-          "english": "saying",
-          "arabic": "قائلين",
+          "english": ":",
+          "arabic": ":",
           "startTime": 0.0,
           "endTime": 1.0
         },
@@ -65,8 +65,8 @@ export const conversationData: TranscriptSegment[] = [
       "words": [
         {
           "coptic": "ⲛ̀ϫⲉ",
-          "english": "(subject marker)",
-          "arabic": "اسمك",
+          "english": " ",
+          "arabic": " ",
           "startTime": 12.3,
           "endTime": 13.0
         },
@@ -86,8 +86,8 @@ export const conversationData: TranscriptSegment[] = [
         },
         {
           "coptic": "ⲛ̀ϫⲉ",
-          "english": "(subject marker)",
-          "arabic": "ملكوتك",
+          "english": " ",
+          "arabic": " ",
           "startTime": 19.2,
           "endTime": 20.0
         },
@@ -234,7 +234,7 @@ export const conversationData: TranscriptSegment[] = [
         {
           "coptic": "ⲭⲁ",
           "english": "forgive",
-          "arabic": "اترك",
+          "arabic": "اغفر",
           "startTime": 59.5,
           "endTime": 59.54
         },
@@ -255,7 +255,7 @@ export const conversationData: TranscriptSegment[] = [
         {
           "coptic": "ⲉ̀ⲃⲟⲗ",
           "english": "away",
-          "arabic": "خارجاً",
+          "arabic": "خطايانا",
           "startTime": 63.5,
           "endTime": 64.9
         }
@@ -283,14 +283,14 @@ export const conversationData: TranscriptSegment[] = [
         {
           "coptic": "ⲛ̀ⲧⲉⲛⲭⲱ",
           "english": "we forgive",
-          "arabic": "نترك",
+          "arabic": "نغفر",
           "startTime": 68.5,
           "endTime": 69.5
         },
         {
           "coptic": "ⲉ̀ⲃⲟⲗ",
-          "english": "away",
-          "arabic": "خارجاً",
+          "english": "sins",
+          "arabic": "خطايا",
           "startTime": 70.0,
           "endTime": 72.0
         },
@@ -366,7 +366,7 @@ export const conversationData: TranscriptSegment[] = [
         },
         {
           "coptic": "ⲛⲁϩⲙⲉⲛ",
-          "english": "deliver us",
+          "english": "save us",
           "arabic": "نجنا",
           "startTime": 88.9,
           "endTime": 90.1
@@ -394,7 +394,7 @@ export const conversationData: TranscriptSegment[] = [
       "words": [
         {
           "coptic": "Ϧⲉⲛ",
-          "english": "in / through",
+          "english": "in",
           "arabic": "بـ",
           "startTime": 94.0,
           "endTime": 95.0
