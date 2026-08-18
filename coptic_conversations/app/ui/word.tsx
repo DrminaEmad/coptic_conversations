@@ -53,12 +53,12 @@ export default function SingleWord({ word,
     });
   const  currentTime = getCurrentAudioTime(); 
 
-// check if the word is currently being played :
-const activeWord = 
-  word.startTime !== undefined && 
-  word.endTime !== undefined && 
-  currentTime >= word.startTime && 
-  currentTime <= word.endTime;
+  // check if the word is currently being played :
+  const activeWord = 
+    word.startTime !== undefined && 
+    word.endTime !== undefined && 
+    currentTime >= word.startTime && 
+    currentTime <= word.endTime;
 
   // stop sound playing when the word clicked 
   useEffect(() => {
@@ -72,25 +72,6 @@ const activeWord =
       }
     }, [isOpen]);
 
-
-    // Attach clicking and dismiss behavior hooks
-    const click = useClick(context);
-    const dismiss = useDismiss(context);
-
-    // Add this line right below your "getFloatingProps" declaration:
-    const { x: arrowX, y: arrowY } = middlewareData.arrow || {};
-
-    const setReferenceRef = (node: HTMLDivElement | null) => {
-        if (node) refs.setReference(node);
-      };
-    // ADD THIS LINE:
-    const setFloatingRef = (node: HTMLDivElement | null) => {
-      if (node) refs.setFloating(node);
-    };
-
-    const { getReferenceProps, getFloatingProps } = useInteractions([click, dismiss]);
-
-
     // Dedicated word audio clip trigger handler
     const handlePlayWordSound = (e: React.MouseEvent) => {
       e.stopPropagation(); // Avoid interaction bubble-closing the popover block
@@ -102,8 +83,24 @@ const activeWord =
       }
     };
 
+    // Attach clicking and dismiss behavior hooks from floating UI 
+    const click = useClick(context);
 
+    const dismiss = useDismiss(context);
 
+    const { x: arrowX, y: arrowY } = middlewareData.arrow || {};
+
+    const setReferenceRef = (node: HTMLDivElement | null) => {
+        if (node) refs.setReference(node);
+      };
+
+    const setFloatingRef = (node: HTMLDivElement | null) => {
+      if (node) refs.setFloating(node);
+    };
+
+    const { getReferenceProps, getFloatingProps } = useInteractions([click, dismiss]);
+
+    
   return (
 
     <div 
