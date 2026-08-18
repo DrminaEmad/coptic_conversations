@@ -533,7 +533,7 @@ export const conversationData: TranscriptSegment[] = [
           "endTime": 121.1
         },
         {
-          "coptic": "ⲡ̀Ϣⲏⲣⲓ",
+          "coptic": "ⲡ̀ϣⲏⲣⲓ",
           "english": "the Son",
           "arabic": "الابن",
           "startTime": 121.2,
@@ -547,14 +547,14 @@ export const conversationData: TranscriptSegment[] = [
           "endTime": 123.8
         },
         {
-          "coptic": "ⲡⲓⲠⲛⲉⲩⲙⲁ",
+          "coptic": "Ⲡⲓⲡⲛⲉⲩⲙⲁ",
           "english": "the Spirit",
           "arabic": "الروح",
           "startTime": 123.8,
           "endTime": 126.0
         },
         {
-          "coptic": "Ⲉⲑⲟⲩⲁⲛⲃ",
+          "coptic": "Ⲉⲑⲟⲩⲁⲃ",
           "english": "Holy",
           "arabic": "القدس",
           "startTime": 126.5,
