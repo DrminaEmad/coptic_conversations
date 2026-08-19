@@ -25,7 +25,8 @@ const TranscriptSegmentRow = memo(({
   getCurrentAudioTime, translation  }: RowProps) => {
     
   // nullish coalescing to show even empty text if it exists 
-  const translationMap = {
+  //Record<TranslationLanguage, (() => string | null) | undefined>
+  const translationMap = {  //
     arabic: () => segment.arabicSentence ?? arabicSentence(translation, segment),
     english: () => segment.englishSentence ?? englishSentence(translation, segment),
     none: () => null
