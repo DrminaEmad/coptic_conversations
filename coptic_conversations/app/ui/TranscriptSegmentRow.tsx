@@ -27,7 +27,8 @@ const TranscriptSegmentRow = memo(({
   // nullish coalescing to show even empty text if it exists 
   const translationMap = {
     arabic: () => segment.arabicSentence ?? arabicSentence(translation, segment),
-    english: () => segment.englishSentence ?? englishSentence(translation, segment)
+    english: () => segment.englishSentence ?? englishSentence(translation, segment),
+    none: () => null
   };
 
   const displaySentence = translationMap[translation] ? translationMap[translation]() : null;
