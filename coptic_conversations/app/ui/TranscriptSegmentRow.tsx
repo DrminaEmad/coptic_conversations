@@ -23,11 +23,15 @@ const TranscriptSegmentRow = memo(({
   isPlaying,
   setIsPlaying,
   getCurrentAudioTime, translation  }: RowProps) => {
-  
-  const displaySentence = 
-  translation === 'arabic' ? arabicSentence(translation, segment) :
-  translation === 'english' ? englishSentence(translation, segment) : 
-  null;
+    
+  // nullish coalescing to show even empty text if it exists 
+  const translationMap = {
+    arabic: () => segment.arabicSentence ?? arabicSentence(translation, segment),
+    english: () => segment.englishSentence ?? englishSentence(translation, segment)
+  };
+
+  const displaySentence = translationMap[translation] ? translationMap[translation]() : null;
+
 
 
   return (

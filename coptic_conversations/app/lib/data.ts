@@ -11,6 +11,8 @@ export interface TranscriptSegment {
   id: number;
   startTime: number;  // Time in seconds when segment starts
   endTime: number;    // Time in seconds when segment ends
+  arabicSentence?: string;
+  englishSentence?: string;
   words: DialogueWord[];
 }
 
