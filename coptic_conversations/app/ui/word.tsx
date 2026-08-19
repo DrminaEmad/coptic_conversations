@@ -53,13 +53,7 @@ export default function SingleWord({ word,
     });
   const  currentTime = getCurrentAudioTime(); 
 
-  // check if the word is currently being played :
-  const activeWord = 
-    word.startTime !== undefined && 
-    word.endTime !== undefined && 
-    currentTime >= word.startTime && 
-    currentTime <= word.endTime;
-
+  
   // stop sound playing when the word clicked 
   useEffect(() => {
       if (isOpen) {
