@@ -22,6 +22,8 @@ export const conversationData: TranscriptSegment[] = [
       "id": 1,
       "startTime": 0.0,
       "endTime": 11.0,
+      "arabicSentence": 'ابانا الذي في السموات',
+      "englishSentence": 'Our Father, who art in heaven',
       "words": [
         {
           "coptic": "ϫⲉ",
@@ -51,20 +53,22 @@ export const conversationData: TranscriptSegment[] = [
           "startTime": 6.0,
           "endTime": 8.0
         },
-        {
-          "coptic": "ⲙⲁⲣⲉϥⲧⲟⲩⲃⲟ",
-          "english": "hallowed be",
-          "arabic": "ليتقدس",
-          "startTime": 8.5,
-          "endTime": 12.0
-        }
       ]
     },
     {
       "id": 2,
       "startTime": 12.0,
       "endTime": 23.0,
+      "arabicSentence": 'ليتقدس اسمك  لياتي ملكوتك ',
+      "englishSentence": 'hallowed be thy name thy will be done;',
       "words": [
+        {
+          "coptic": "ⲙⲁⲣⲉϥⲧⲟⲩⲃⲟ",
+          "english": "hallowed be",
+          "arabic": "ليتقدس",
+          "startTime": 8.5,
+          "endTime": 12.0
+        },
         {
           "coptic": "ⲛ̀ϫⲉ",
           "english": " ",
@@ -106,6 +110,8 @@ export const conversationData: TranscriptSegment[] = [
       "id": 3,
       "startTime": 23.5,
       "endTime": 38.0,
+      "arabicSentence": 'لتكن مشيئتك  كما في السماء',
+      "englishSentence": 'thy will be done , on earth as it is in heaven',
       "words": [
         {
           "coptic": "ⲡⲉⲧⲉϩⲛⲁⲕ",
@@ -148,6 +154,8 @@ export const conversationData: TranscriptSegment[] = [
       "id": 4,
       "startTime": 38.5,
       "endTime": 45.0,
+      "arabicSentence": 'كذلك علي الارض ',
+      "englishSentence": 'on earth ',
       "words": [
         {
           "coptic": "ⲛⲉⲙ",
@@ -176,6 +184,8 @@ export const conversationData: TranscriptSegment[] = [
       "id": 5,
       "startTime": 45.5,
       "endTime": 58.0,
+      "arabicSentence": 'خبزنا كفافنا اعطنا اليوم',
+      "englishSentence": 'Give us this day our daily bread ',
       "words": [
         {
           "coptic": "ⲡⲉⲛⲱⲓⲕ",
@@ -225,6 +235,8 @@ export const conversationData: TranscriptSegment[] = [
       "id": 6,
       "startTime": 58.5,
       "endTime": 64.0,
+      "arabicSentence": 'و اغفر لنا زنوبنا',
+      "englishSentence": 'And forgive us our trespasses',
       "words": [
         {
           "coptic": "ⲟⲩⲟϩ",
@@ -267,6 +279,8 @@ export const conversationData: TranscriptSegment[] = [
       "id": 7,
       "startTime": 64.5,
       "endTime": 77.0,
+      "arabicSentence": 'كما نغفر نحن ايضا للمذنبين الينا ',
+      "englishSentence": 'as we forgive those who trespass against us',
       "words": [
         {
           "coptic": "ⲙ̀ⲫⲣⲏϯ",
@@ -323,6 +337,8 @@ export const conversationData: TranscriptSegment[] = [
       "id": 8,
       "startTime": 79.0,
       "endTime": 86.0,
+      "arabicSentence": 'و لا تدخلنا في تجربة',
+      "englishSentence": 'And lead us not into temptation;',
       "words": [
         {
           "coptic": "ⲟⲩⲟϩ",
@@ -358,6 +374,8 @@ export const conversationData: TranscriptSegment[] = [
       "id": 9,
       "startTime": 86.5,
       "endTime": 93.5,
+      "arabicSentence": 'لكن نجنا من الشرير',
+      "englishSentence": 'but deliver us from evil.',
       "words": [
         {
           "coptic": "ⲁⲗⲗⲁ",
@@ -393,6 +411,8 @@ export const conversationData: TranscriptSegment[] = [
       "id": 10,
       "startTime": 93.5,
       "endTime": 101,
+      "arabicSentence": 'بالمسيح يسوع ربنا',
+      "englishSentence": '',
       "words": [
         {
           "coptic": "Ϧⲉⲛ",
@@ -428,6 +448,8 @@ export const conversationData: TranscriptSegment[] = [
       "id": 11,
       "startTime": 101.5,
       "endTime": 115.0,
+      "arabicSentence": 'لان لك الملك و القوة و المجد الي ابد الابدين امين ',
+      "englishSentence": ' For thine is the kingdom, the power and the glory, for ever and ever, Amen.',
       "words": [
         {
           "coptic": "ϫⲉ",
@@ -512,6 +534,8 @@ export const conversationData: TranscriptSegment[] = [
       "id": 12,
       "startTime": 115.5,
       "endTime": 130.0,
+      "arabicSentence": 'المجد للاب و الابن و الروح القدس ',
+      "englishSentence": '',
       "words": [
         {
           "coptic": "Ⲡⲓⲱⲟⲩ",
@@ -568,6 +592,8 @@ export const conversationData: TranscriptSegment[] = [
       "id": 13,
       "startTime": 130.5,
       "endTime": 145.0,
+      "arabicSentence": 'الان و كل اوان و الي ابد الاباد  ',
+      "englishSentence": '',
       "words": [
         {
           "coptic": "ϯⲛⲟⲩ",
