@@ -535,7 +535,7 @@ export const conversationData: TranscriptSegment[] = [
       "startTime": 115.5,
       "endTime": 130.0,
       "arabicSentence": 'المجد للاب و الابن و الروح القدس ',
-      "englishSentence": '',
+      "englishSentence": 'The Glory for the Father , The Son and The Holy Spirit',
       "words": [
         {
           "coptic": "Ⲡⲓⲱⲟⲩ",
@@ -593,7 +593,7 @@ export const conversationData: TranscriptSegment[] = [
       "startTime": 130.5,
       "endTime": 145.0,
       "arabicSentence": 'الان و كل اوان و الي ابد الاباد  ',
-      "englishSentence": '',
+      "englishSentence": 'Forever and ever',
       "words": [
         {
           "coptic": "ϯⲛⲟⲩ",
