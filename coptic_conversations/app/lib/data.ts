@@ -21,7 +21,7 @@ export const conversationData: TranscriptSegment[] = [
     {
       "id": 1,
       "startTime": 0.0,
-      "endTime": 11.0,
+      "endTime": 8.0,
       "arabicSentence": 'ابانا الذي في السموات',
       "englishSentence": 'Our Father, who art in heaven',
       "words": [
@@ -57,7 +57,7 @@ export const conversationData: TranscriptSegment[] = [
     },
     {
       "id": 2,
-      "startTime": 12.0,
+      "startTime": 8.1,
       "endTime": 23.0,
       "arabicSentence": 'ليتقدس اسمك  لياتي ملكوتك ',
       "englishSentence": 'hallowed be thy name thy will be done;',
@@ -330,7 +330,14 @@ export const conversationData: TranscriptSegment[] = [
           "arabic": "علينا",
           "startTime": 76.1,
           "endTime": 77.2
-        }
+        },
+        {
+          "coptic": "̀ⲉⲣⲱⲟⲩ",
+          "english": "against us",
+          "arabic": "علينا",
+          "startTime": 77.5,
+          "endTime": 79.0
+        },
       ]
     }, 
     {
